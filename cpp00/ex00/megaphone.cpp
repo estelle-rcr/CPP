@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 17:43:12 by erecuero          #+#    #+#             */
-/*   Updated: 2022/01/06 18:24:00 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/01/24 17:34:17 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <ctype.h>
 
 int	main(int ac, char **av) {
-
+	
 	int	i;
 	int j;
 	char var;

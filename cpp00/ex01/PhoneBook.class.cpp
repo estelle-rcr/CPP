@@ -6,16 +6,16 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 18:28:44 by erecuero          #+#    #+#             */
-/*   Updated: 2022/01/06 18:31:07 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/01/24 16:13:51 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "PhoneBook.class.hpp"
 
-
-PhoneBook.class::PhoneBook.class(/* args */)
+PhoneBook::PhoneBook(/* args */)
 {
 }
 
-PhoneBook.class::~PhoneBook.class()
+PhoneBook::~PhoneBook()
 {
 }
