@@ -1,8 +1,6 @@
 #ifndef CONTACT_CLASS_H
 # define CONTACT_CLASS_H
 
-#include "PhoneBook.hpp"
-
 class Contact {
 
 public:
@@ -11,8 +9,8 @@ public:
 	~Contact();
 
 	static int	getNbInst( void );
-	static int	setAttributes( void );
-	static int	setAttributes( void );
+	int	setAttributes( void );
+	int	getAttributes( void ) const;
 
 private:
 	static int	_nbInst;

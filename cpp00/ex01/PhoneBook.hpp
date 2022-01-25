@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 18:28:49 by erecuero          #+#    #+#             */
-/*   Updated: 2022/01/25 15:28:26 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/01/25 16:44:28 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ public:
 	void	exit(void) const;
 	int		addContact(void) const;
 	int		searchContact();
+
+	static int	getCommand( void );
 
 private:
 	Contact	contacts[8];
