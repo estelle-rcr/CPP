@@ -1,4 +1,4 @@
-NAME = phonebook
+NAME = Funbook
 
 SRCS =	phonebook.cpp\
 OBJS = ${SRCS:.cpp=.o}

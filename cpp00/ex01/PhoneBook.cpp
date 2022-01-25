@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.class.hpp                                :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/06 18:28:49 by erecuero          #+#    #+#             */
-/*   Updated: 2022/01/24 16:15:14 by erecuero         ###   ########.fr       */
+/*   Created: 2022/01/06 18:28:44 by erecuero          #+#    #+#             */
+/*   Updated: 2022/01/25 15:33:41 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_CLASS_H
-# define PHONEBOOK_CLASS_H
+#include "PhoneBook.hpp"
+#include "Contact.hpp"
 
-class PhoneBook {
+PhoneBook::PhoneBook( void )
+{
+	return;
+}
 
-public:
-	PhoneBook(/* args */);
-	~PhoneBook();
+PhoneBook::~PhoneBook( void )
+{
+	return;
+}
 
-private:
-	/* data */
-
-};
-
-
-
-
-#endif
+Contact::Contact( void )
+{
+	Contact::_nbInst += 1;
+	return;
+}

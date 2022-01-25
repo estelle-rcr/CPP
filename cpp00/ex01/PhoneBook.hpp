@@ -1,21 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.class.cpp                                :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/06 18:28:44 by erecuero          #+#    #+#             */
-/*   Updated: 2022/01/24 16:13:51 by erecuero         ###   ########.fr       */
+/*   Created: 2022/01/06 18:28:49 by erecuero          #+#    #+#             */
+/*   Updated: 2022/01/25 15:28:26 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.class.hpp"
+#ifndef PHONEBOOK_CLASS_H
+# define PHONEBOOK_CLASS_H
 
-PhoneBook::PhoneBook(/* args */)
-{
-}
+#include <iostream>
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+#include "Contact.hpp"
 
-PhoneBook::~PhoneBook()
-{
-}
+class PhoneBook {
+
+public:
+	PhoneBook();
+	~PhoneBook();
+
+	void	exit(void) const;
+	int		addContact(void) const;
+	int		searchContact();
+
+private:
+	Contact	contacts[8];
+
+};
+
+#endif

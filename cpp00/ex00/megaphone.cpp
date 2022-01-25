@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 17:43:12 by erecuero          #+#    #+#             */
-/*   Updated: 2022/01/24 17:34:17 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/01/25 14:32:52 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,22 +22,16 @@ int	main(int ac, char **av) {
 
 	i = 1;
 	if (ac < 2)
-	{
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-		return 0;	
-	}
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
 	while (av[i])
 	{
 		j = 0;
 		while (av[i][j])
 		{
 			if (av[i][j] >= 'a' && av[i][j] <= 'z')
-			{
-				var = av[i][j] - 32;
-				std::cout << var;
-			}
+				std::cout << (char)std::toupper(av[i][j]);
 			else 
-				std::cout << av[i][j];			
+				std::cout << av[i][j];	
 			j++;
 		}
 		i++;
