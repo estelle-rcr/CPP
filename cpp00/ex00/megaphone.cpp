@@ -6,19 +6,20 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 17:43:12 by erecuero          #+#    #+#             */
-/*   Updated: 2022/01/25 14:32:52 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/01/27 14:48:18 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <stdio.h>
-#include <ctype.h>
+#include <string>
+#include <locale>
 
 int	main(int ac, char **av) {
 	
 	int	i;
 	int j;
 	char var;
+	std::locale loc;
 
 	i = 1;
 	if (ac < 2)
@@ -29,9 +30,9 @@ int	main(int ac, char **av) {
 		while (av[i][j])
 		{
 			if (av[i][j] >= 'a' && av[i][j] <= 'z')
-				std::cout << (char)std::toupper(av[i][j]);
+				std::cout << std::toupper(av[i][j], loc);
 			else 
-				std::cout << av[i][j];	
+				std::cout << av[i][j];
 			j++;
 		}
 		i++;
