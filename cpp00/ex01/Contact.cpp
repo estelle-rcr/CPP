@@ -6,11 +6,10 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 16:33:54 by erecuero          #+#    #+#             */
-/*   Updated: 2022/01/26 19:11:26 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/01/27 15:30:04 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
 #include "Contact.hpp"
 
 int 	Contact::_nbInst = 0;
@@ -27,30 +26,39 @@ Contact::~Contact( void ) {
 	return;
 }
 
-int		Contact::getNbInst( void ) {
-
-	return Contact::_nbInst;
-}
-
-
-int		Contact::setAttribute( std::string attribute, std::string _local) {
+bool	Contact::setAttribute( std::string attribute, std::string _local) {
 
 	std::string	buffer;
 
 	std::cout << attribute << " : ";
 	if (!std::getline(std::cin, buffer, '\n'))
 	{
-		if (std::cin.eof())
-			std::cout << "error: missing end-of-file\n";
-		else
-			std::cout << "error in input\n";
-		return 0;
+		std::cout << "error in input\n";
+		return false;
+	}
+	else if (std::cin.eof())
+	{
+		_local = buffer;
+		return true;
 	}
 	else
 	{
-		_local = buffer;
-		return 1;
+		std::cout << "error: missing end-of-file\n";
+		return false;
 	}
+}
+
+bool	Contact::createContact( int indexInput ) {
+
+	std::cout << "Adding a new contact" << std::endl;
+	if (!Contact::setAttribute(this->attributes[0], this->_lastName)
+		|| !Contact::setAttribute(this->attributes[1], this->_firstName)
+		|| !Contact::setAttribute(this->attributes[2], this->_nickName)
+		|| !Contact::setAttribute(this->attributes[3], this->_phoneNb)
+		|| !Contact::setAttribute(this->attributes[4], this->_darkestSecret))
+		return false;
+	this->index = indexInput;
+	return true;
 }
 
 std::string	Contact::getAttribute( std::string attribute ) const {
@@ -79,19 +87,6 @@ std::string	Contact::getAttribute( std::string attribute ) const {
 	return NULL;
 }
 
-int		Contact::createContact( void ) {
-
-	std::cout << "Adding a new contact" << std::endl;
-	if (!Contact::setAttribute(this->attributes[0], this->_lastName)
-		|| !Contact::setAttribute(this->attributes[1], this->_firstName)
-		|| !Contact::setAttribute(this->attributes[2], this->_nickName)
-		|| !Contact::setAttribute(this->attributes[3], this->_phoneNb)
-		|| !Contact::setAttribute(this->attributes[4], this->_darkestSecret))
-		return 0;
-	index = this->_nbInst;
-	return 1;
-}
-
 void	Contact::removeAttributes( void )
 {
 	if (this->_lastName.empty() == false)
@@ -104,4 +99,9 @@ void	Contact::removeAttributes( void )
 		this->_phoneNb.clear();
 	if (this->_darkestSecret.empty() == false)
 		this->_darkestSecret.clear();
+}
+
+int		Contact::getNbInst( void ) {
+
+	return Contact::_nbInst;
 }

@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 18:28:49 by erecuero          #+#    #+#             */
-/*   Updated: 2022/01/26 18:46:27 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/01/27 15:53:13 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,13 @@ public:
 	PhoneBook();
 	~PhoneBook();
 
-	void		exit( void ) const;
-	int			addContact( void ) const;
-	int			searchContact( void ) const;
-	int			showPrompt( void ) const;
+//	void		exit( void );
+	bool		addContact( void );
+	bool		searchContact( void ) const;
 
 private:
-	Contact	contacts[8];
+	int		_nbContacts;
+	Contact	_contacts[8];
 
 };
 
