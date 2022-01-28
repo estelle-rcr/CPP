@@ -6,11 +6,14 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:44:01 by erecuero          #+#    #+#             */
-/*   Updated: 2022/01/28 17:00:20 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/01/28 19:14:12 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#include "../includes/PhoneBook.hpp"
+#include <cctype>
+
+int 	Contact::_nbInst = 0;
 
 void	intro( void ) {
 
@@ -45,18 +48,19 @@ void	searchFunBook( PhoneBook funbook ) {
 		std::cout << "\nNo contact to be displayed yet.\n" << std::endl;
 	else {
 		std::cout << "> Select an index: " << std::endl;
-		if (!getline(std::cin, input, '\n')) {
-			std::cout << "error in input\n";
-			return ;
-		}
-		index = std::stoi(input, &sz);
-		while (index == 0) {
+		do {
 			if (!getline(std::cin, input, '\n')) {
 				std::cout << "error in input\n";
 				return ;
 			}
-			index = std::stoi(input, &sz);
-		}
+			index = std::stoi(input,&sz);
+		} while (index < 0 || index >= NB_CONTACTS);
+// try {
+//	index = std::stoi(input,&sz)
+//}
+//		catch (std::invalid_argument const& ex) {
+ //       	std::cout << "#2: " << ex.what() << '\n';
+ //   	}
 		funbook.displayContact(index);
 	}
 	return ;
@@ -74,6 +78,7 @@ int	main( void ) {
 		return 1;
 	}
 	while (input != "EXIT") {
+		printf("test MAIN %i\n", Contact::getNbInst());
 		if (input.compare("ADD") == 0)
 		{
 			if (funbook.addContact() == false) {

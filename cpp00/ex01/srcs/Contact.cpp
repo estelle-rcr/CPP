@@ -6,13 +6,12 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 16:33:54 by erecuero          #+#    #+#             */
-/*   Updated: 2022/01/28 16:55:02 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/01/28 19:14:09 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.hpp"
+#include "../includes/PhoneBook.hpp"
 
-int 	Contact::_nbInst = 0;
 
 Contact::Contact( void ) {
 
@@ -31,15 +30,28 @@ Contact::~Contact( void ) {
 	return;
 }
 
-bool	Contact::setAttribute( std::string attribute, std::string _local) {
+bool	Contact::setAttribute( int i ) {
 
 	std::string	buffer;
 
-	std::cout << attribute << " : ";
+	std::cout << this->attributes[i] << " : ";
 	if (!getline(std::cin, buffer, '\n'))
 	{
 		std::cin.ignore();
 		return false;
+	}
+	switch (i)
+	{
+		case 0:
+			this->_lastName = buffer;
+		case 1:
+			this->_firstName = buffer;
+		case 2:
+			this->_nickName = buffer;
+		case 3:
+			this->_phoneNb = buffer;
+		case 4:
+			this->_darkestSecret = buffer;
 	}
 	return true;
 }
@@ -47,38 +59,30 @@ bool	Contact::setAttribute( std::string attribute, std::string _local) {
 bool	Contact::createContact( int indexInput ) {
 
 	std::cout << "> Adding a new contact" << std::endl;
-	if (!Contact::setAttribute(this->attributes[0], this->_lastName)
-		|| !Contact::setAttribute(this->attributes[1], this->_firstName)
-		|| !Contact::setAttribute(this->attributes[2], this->_nickName)
-		|| !Contact::setAttribute(this->attributes[3], this->_phoneNb)
-		|| !Contact::setAttribute(this->attributes[4], this->_darkestSecret))
+	if (!Contact::setAttribute(0)
+		|| !Contact::setAttribute(1)
+		|| !Contact::setAttribute(2)
+		|| !Contact::setAttribute(3)
+		|| !Contact::setAttribute(4))
 		return false;
 	this->_index = indexInput;
 	return true;
 }
 
-std::string	Contact::getAttribute( std::string attribute ) const {
+std::string	Contact::getAttribute( int i ) const {
 
-	std::string	buffer;
-	int			i = 0;
-
-	if (this->_index)
+	switch (i)
 	{
-		while (this->attributes[i] != attribute)
-			i++;
-		switch (i)
-		{
-			case 0:
-				return this->_lastName;
-			case 1:
-				return this->_firstName;
-			case 2:
-				return this->_nickName;
-			case 3:
-				return this->_phoneNb;
-			case 4:
-				return this->_darkestSecret;
-		}
+		case 0:
+			return (this->_lastName);
+		case 1:
+			return this->_firstName;
+		case 2:
+			return this->_nickName;
+		case 3:
+			return this->_phoneNb;
+		case 4:
+			return this->_darkestSecret;
 	}
 	return NULL;
 }

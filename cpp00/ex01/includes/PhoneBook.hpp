@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 18:28:49 by erecuero          #+#    #+#             */
-/*   Updated: 2022/01/28 13:42:50 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/01/28 19:15:32 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ public:
 
 private:
 	int		_index;
+	int		_set;
 	Contact	_contacts[NB_CONTACTS];
 };
 

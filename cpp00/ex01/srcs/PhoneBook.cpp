@@ -6,15 +6,16 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 18:28:44 by erecuero          #+#    #+#             */
-/*   Updated: 2022/01/28 16:59:54 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/01/28 19:16:12 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#include "../includes/PhoneBook.hpp"
 
 PhoneBook::PhoneBook( std::string a1, std::string a2, std::string a3, std::string a4, std::string a5 ) {
 
 	this->_index = 0;
+	this->_set = 0;
 //	this->attributes[0] = "Last Name";
 //	this->attributes[1] = "First Name";
 //	this->attributes[2] = "Nick Name";
@@ -39,12 +40,12 @@ bool	PhoneBook::addContact( void ) {
 
 	if (this->_index < NB_CONTACTS) {
 		Contact	newContact;
-		this->_index++;
 		if ((ret = newContact.createContact(this->_index)) == false)
 			return ret;
-		if (sizeof(this->_contacts) / sizeof(Contact) > this->_index)		// this->_contacts[this->_index].isSet() // newContact._NbInst > this->_index
-			this->_contacts[this->_index].removeAttributes();				// not sure if needed (reassignment handled by C++)
+	//	if (sizeof(this->_contacts) / (sizeof(Contact) * 8) > this->_index)		// this->_contacts[this->_index].isSet() // newContact._NbInst > this->_index
+	//		this->_contacts[this->_index].removeAttributes();				// not sure if needed (reassignment handled by C++)
 		this->_contacts[this->_index] = newContact;							// set up attributes from phonebook attributes
+		this->_index++;
 		return ret;
 	}
 	else if (this->_index >= NB_CONTACTS) {
@@ -66,7 +67,7 @@ std::string	display_cell( std::string str, int width ) {
 	if (len <= width)
 	{
 		cells = (width - len);
-		str.insert(str.begin(), cells, ' ');			// a tester
+		str.insert(str.begin(), cells, ' ');
 		return str;
 	}
 	else
@@ -77,19 +78,20 @@ bool	PhoneBook::searchContact( void ) const {
 
 	bool	ret (false);
 
-	if (this->_index == 0)
+	if (this->_set == 0)
 		return false;
 	std::cout << "\n|" << display_cell("INDEX", 10) << "|"
 					<< display_cell("FIRST NAME", 10) << "|"
 					<< display_cell("LAST NAME", 10) << "|"
 					<< display_cell("NICK NAME", 10) << "|"
 					<< std::endl;
-	for (int i = 0; i < this->_index; i++) {
-		std::cout << "|" << std::setw(9)
+//	std::cout << this->_contacts[0].getAttribute(0) << std::endl;
+	for (int i = 0; i < this->_set; i++) {
+		std::cout << "|" << std::setw(10)
 			<< this->_contacts[i].getIndex() << "|"
-			<< display_cell(this->_contacts[i].getAttribute(attributes[1]), 10) << "|"
-			<< display_cell(this->_contacts[i].getAttribute(attributes[0]), 10) << "|"
-			<< display_cell(this->_contacts[i].getAttribute(attributes[2]), 10) << "|"
+			<< display_cell(this->_contacts[i].getAttribute(1), 10) << "|"
+			<< display_cell(this->_contacts[i].getAttribute(0), 10) << "|"
+			<< display_cell(this->_contacts[i].getAttribute(2), 10) << "|"
 			<< std::endl;
 	}
 	return true;
@@ -97,11 +99,11 @@ bool	PhoneBook::searchContact( void ) const {
 
 bool	PhoneBook::displayContact( int index ) const {
 
-	if (index < 0 || index > NB_CONTACTS)
+	if (index < 0 || index >= NB_CONTACTS)
 		return false;
-	if (index <= sizeof(this->_contacts) / sizeof(Contact)) {
-		for (int i = 0; i < 4; i++)
-			std::cout << this->_contacts[index].getAttribute(attributes[i]) << std::endl;
+	if (index < sizeof(this->_contacts) / (sizeof(Contact) * 8)) {
+		for (int i = 0; i < 5; i++)
+			std::cout << this->_contacts[index].getAttribute(i) << std::endl;
 		return true;
 	}
 	return false;

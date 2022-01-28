@@ -14,9 +14,9 @@ public:
 
 	std::string	attributes[5];
 
-	bool		setAttribute( std::string attribute, std::string _local );
+	bool		setAttribute( int i );
 	bool		createContact( int indexInput );
-	std::string	getAttribute( std::string attribute ) const;
+	std::string	getAttribute( int i ) const;
 	int			getIndex( void ) const;
 	void		removeAttributes( void );
 	static int	getNbInst( void );

@@ -1,23 +1,25 @@
 NAME = Funbook
 
-SRCS =	Contact.cpp\
-		PhoneBook.cpp\
-		main.cpp
+SRCS =	main.cpp\
+		Contact.cpp\
+		PhoneBook.cpp
 
-OBJS = ${SRCS:.cpp=.o}
+OBJS	=${addprefix srcs/,${SRCS:.cpp=.o}}
+
+INCLUDES = includes
 
 CC = g++
 
-CFLAGS = -Wall -Werror -Wextra -Wno-unused
+CFLAGS = -Wall -Werror -Wextra -Wno-unused -g3
 
-RM = rm
+RM = rm -rf
 
 #FSANITIZE = -ggdb -fsanitize=address -fno-omit-frame-pointer
 
 #VALGRIND = -ggdb
 
 .c.o:
-		${CC} ${CFLAGS} -c $< -o ${<:.cpp=.o}
+		${CC} ${CFLAGS} -I${INCLUDES} -c $< -o ${<:.cpp=.o}
 
 all:	${NAME}
 
