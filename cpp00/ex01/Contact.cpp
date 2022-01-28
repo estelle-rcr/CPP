@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 16:33:54 by erecuero          #+#    #+#             */
-/*   Updated: 2022/01/27 15:30:04 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/01/28 13:19:34 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@ int 	Contact::_nbInst = 0;
 Contact::Contact( void ) {
 
 	Contact::_nbInst += 1;
+	this->attributes[0] = "Last Name";
+	this->attributes[1] = "First Name";
+	this->attributes[2] = "Nick Name";
+	this->attributes[3] = "Phone Number";
+	this->attributes[4] = "Darkest secret";
 	return;
 }
 
@@ -57,7 +62,7 @@ bool	Contact::createContact( int indexInput ) {
 		|| !Contact::setAttribute(this->attributes[3], this->_phoneNb)
 		|| !Contact::setAttribute(this->attributes[4], this->_darkestSecret))
 		return false;
-	this->index = indexInput;
+	this->_index = indexInput;
 	return true;
 }
 
@@ -66,7 +71,7 @@ std::string	Contact::getAttribute( std::string attribute ) const {
 	std::string	buffer;
 	int			i = 0;
 
-	if (this->index)
+	if (this->_index)
 	{
 		while (this->attributes[i] != attribute)
 			i++;
@@ -87,9 +92,14 @@ std::string	Contact::getAttribute( std::string attribute ) const {
 	return NULL;
 }
 
+int		Contact::getIndex( void ) const {
+
+	return this->_index;
+}
+
 void	Contact::removeAttributes( void )
 {
-	if (this->_lastName.empty() == false)
+	if (this->_lastName.empty() == false)		//.isSet ?
 		this->_lastName.clear();
 	if (this->_firstName.empty() == false)
 		this->_firstName.clear();

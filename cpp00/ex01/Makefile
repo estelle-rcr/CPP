@@ -2,7 +2,8 @@ NAME = Funbook
 
 SRCS =	Contact.cpp\
 		PhoneBook.cpp\
-		
+		main.cpp
+
 OBJS = ${SRCS:.cpp=.o}
 
 CC = g++

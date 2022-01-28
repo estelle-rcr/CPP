@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 18:28:49 by erecuero          #+#    #+#             */
-/*   Updated: 2022/01/27 15:53:13 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/01/28 13:42:50 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,22 +17,26 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
+#include <iomanip>
 #include "Contact.hpp"
+
+#define NB_CONTACTS 8
 
 class PhoneBook {
 
 public:
-	PhoneBook();
+	std::string	attributes[5];
+
+	PhoneBook(std::string a1, std::string a2, std::string a3, std::string a4, std::string a5);
 	~PhoneBook();
 
-//	void		exit( void );
-	bool		addContact( void );
-	bool		searchContact( void ) const;
+	bool	addContact( void );
+	bool	searchContact( void ) const;
+	bool	displayContact( int index ) const;
 
 private:
-	int		_nbContacts;
-	Contact	_contacts[8];
-
+	int		_index;
+	Contact	_contacts[NB_CONTACTS];
 };
 
 #endif
