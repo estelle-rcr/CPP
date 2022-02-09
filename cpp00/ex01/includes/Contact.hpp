@@ -18,7 +18,7 @@ public:
 	bool		createContact( int indexInput );
 	std::string	getAttribute( int i ) const;
 	int			getIndex( void ) const;
-	void		removeAttributes( void );
+//	void		removeAttributes( void );
 	static int	getNbInst( void );
 
 private:

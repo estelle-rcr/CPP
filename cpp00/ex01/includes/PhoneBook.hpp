@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 18:28:49 by erecuero          #+#    #+#             */
-/*   Updated: 2022/01/28 19:15:32 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/02/09 16:03:44 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,11 @@ public:
 	bool	addContact( void );
 	bool	searchContact( void ) const;
 	bool	displayContact( int index ) const;
+	int		getIsSet( void ) const;
 
 private:
 	int		_index;
-	int		_set;
+	int		_isSet;
 	Contact	_contacts[NB_CONTACTS];
 };
 
