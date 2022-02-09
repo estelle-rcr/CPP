@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:44:01 by erecuero          #+#    #+#             */
-/*   Updated: 2022/02/09 17:05:14 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/02/09 17:36:51 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,7 @@ int	main( void ) {
 			std::cout << "\nerror in input\n" << std::endl;
 			return 1;
 		}
-		if (input.compare("ADD") == 0)
-		{
+		if (input.compare("ADD") == 0) {
 			if (funbook.addContact() == false) {
 				std::cout << "\nerror in adding a contact" << std::endl;
 				return 1;

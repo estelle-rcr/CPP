@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 18:28:44 by erecuero          #+#    #+#             */
-/*   Updated: 2022/02/09 17:18:16 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/02/09 17:36:35 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,7 @@ std::string	display_cell( std::string str, int width ) {
 	std::string new_str;
 
 	len = str.length();
-	if (len <= width)
-	{
+	if (len <= width) {
 		cells = (width - len);
 		str.insert(str.begin(), cells, ' ');
 		return str;
@@ -72,10 +71,10 @@ bool	PhoneBook::searchContact( void ) const {
 	if (this->_index == 0)
 		return false;
 	std::cout << "\n|" << display_cell("INDEX", 10) << "|"
-					<< display_cell("FIRST NAME", 10) << "|"
-					<< display_cell("LAST NAME", 10) << "|"
-					<< display_cell("NICK NAME", 10) << "|"
-					<< std::endl;
+		<< display_cell("FIRST NAME", 10) << "|"
+		<< display_cell("LAST NAME", 10) << "|"
+		<< display_cell("NICK NAME", 10) << "|"
+		<< std::endl;
 	for (int i = 0; i < this->_isSet; i++) {
 		if (this->_contacts[i].getIndex() >= 0) {
 			std::cout << "|" << std::setw(10)

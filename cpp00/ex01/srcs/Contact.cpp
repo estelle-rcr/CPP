@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 16:33:54 by erecuero          #+#    #+#             */
-/*   Updated: 2022/02/09 17:04:51 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/02/09 17:34:26 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,7 @@ bool	Contact::setAttribute( int i ) {
 
 	std::string	buffer;
 
-	do
-	{
+	do {
 		std::cout << this->attributes[i] << " : ";
 		if (!getline(std::cin, buffer, '\n'))
 		{
@@ -44,8 +43,7 @@ bool	Contact::setAttribute( int i ) {
 			return false;
 		}
 	} while (buffer.empty() == true);
-	switch (i)
-	{
+	switch (i) {
 		case 0:
 			this->_lastName = buffer;
 		case 1:
@@ -95,20 +93,6 @@ int		Contact::getIndex( void ) const {
 
 	return this->_index;
 }
-/*
-void	Contact::removeAttributes( void )
-{
-	if (this->_lastName.empty() == false)		//.isSet ?
-		this->_lastName.clear();
-	if (this->_firstName.empty() == false)
-		this->_firstName.clear();
-	if (this->_nickName.empty() == false)
-		this->_nickName.clear();
-	if (this->_phoneNb.empty() == false)
-		this->_phoneNb.clear();
-	if (this->_darkestSecret.empty() == false)
-		this->_darkestSecret.clear();
-}*/
 
 int		Contact::getNbInst( void ) {
 

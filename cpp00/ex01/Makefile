@@ -10,7 +10,7 @@ INCLUDES = includes
 
 CC = g++
 
-CFLAGS = -Wall -Werror -Wextra -Wno-unused -g3
+CFLAGS = -Wall -Werror -Wextra -Wno-unused
 
 RM = rm -rf
 
