@@ -1,4 +1,4 @@
-NAME = Funbook
+NAME = funbook
 
 SRCS =	main.cpp\
 		Contact.cpp\
@@ -16,7 +16,7 @@ RM = rm -rf
 
 #FSANITIZE = -ggdb -fsanitize=address
 
-#VALGRIND = -ggdb
+VALGRIND = -ggdb
 
 .c.o:
 		${CC} ${CFLAGS} -I${INCLUDES} -c $< -o ${<:.cpp=.o}
