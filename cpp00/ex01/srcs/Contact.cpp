@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 16:33:54 by erecuero          #+#    #+#             */
-/*   Updated: 2022/02/09 16:37:52 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/02/09 16:48:11 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,15 @@ bool	Contact::setAttribute( int i ) {
 
 	std::string	buffer;
 
-	std::cout << this->attributes[i] << " : ";
-	if (!getline(std::cin, buffer, '\n'))				//do (getline) if... while buffer.empty
+	do
 	{
-		std::cin.ignore();
-		return false;
-	}
+		std::cout << this->attributes[i] << " : ";
+		if (!getline(std::cin, buffer, '\n'))
+		{
+			std::cin.ignore();
+			return false;
+		}
+	} while (buffer.empty() == true);
 	switch (i)
 	{
 		case 0:

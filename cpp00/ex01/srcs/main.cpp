@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:44:01 by erecuero          #+#    #+#             */
-/*   Updated: 2022/02/09 16:44:42 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/02/09 16:46:07 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ void	intro( void ) {
 
 void	searchFunBook( PhoneBook funbook ) {
 
-	std::string	input;
-	int			index(-1);
-	std::string::size_type sz;   // alias of size_t
+	std::string				input;
+	int						index(-1);
+	std::string::size_type	sz;
 
 	if (funbook.searchContact() == false)
 		std::cout << "\nNo contact to be displayed yet.\n" << std::endl;
