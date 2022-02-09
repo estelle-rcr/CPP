@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 16:33:54 by erecuero          #+#    #+#             */
-/*   Updated: 2022/02/09 16:48:11 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/02/09 17:04:51 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ Contact::Contact( void ) {
 
 	Contact::_nbInst += 1;
 	this->_index = -1;
-	this->attributes[0] = "Last Name";
-	this->attributes[1] = "First Name";
+	this->attributes[0] = "First Name";
+	this->attributes[1] = "Last Name";
 	this->attributes[2] = "Nick Name";
 	this->attributes[3] = "Phone Number";
 	this->attributes[4] = "Darkest secret";

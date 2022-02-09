@@ -14,7 +14,7 @@ CFLAGS = -Wall -Werror -Wextra -Wno-unused -g3
 
 RM = rm -rf
 
-#FSANITIZE = -ggdb -fsanitize=address -fno-omit-frame-pointer
+#FSANITIZE = -ggdb -fsanitize=address
 
 #VALGRIND = -ggdb
 

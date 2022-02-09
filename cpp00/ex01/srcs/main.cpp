@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:44:01 by erecuero          #+#    #+#             */
-/*   Updated: 2022/02/09 16:46:07 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/02/09 17:05:14 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	searchFunBook( PhoneBook funbook ) {
 
 int	main( void ) {
 
-	PhoneBook funbook("Last Name", "First Name", "Nick Name", "Phone Number", "Darkest secret");
+	PhoneBook funbook("First Name", "Last Name", "Nick Name", "Phone Number", "Darkest secret");
 	std::string	input;
 
 	std::cout << "Welcome in your FunBook!" << std::endl;
