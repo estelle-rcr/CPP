@@ -6,12 +6,11 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:44:01 by erecuero          #+#    #+#             */
-/*   Updated: 2022/02/09 17:36:51 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/02/10 13:49:36 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/PhoneBook.hpp"
-#include <cctype>
 
 int 	Contact::_nbInst = 0;
 

@@ -1,12 +1,11 @@
-NAME = funbook
+NAME = account
 
-SRCS =	main.cpp\
-		Contact.cpp\
-		PhoneBook.cpp
+SRCS =	Account.cpp\
+		tests.cpp
 
-OBJS	=${addprefix srcs/,${SRCS:.cpp=.o}}
+INCL = includes
 
-INCLUDES = includes
+OBJS = ${addprefix srcs/,${SRCS:.cpp=.o}}
 
 CC = clang++
 
@@ -19,12 +18,12 @@ RM = rm -rf
 #VALGRIND = -ggdb
 
 .c.o:
-		${CC} ${CFLAGS} -I${INCLUDES} -c $< -o ${<:.cpp=.o}
+		${CC} ${CFLAGS} -I${INCL} -c $< -o ${<:.cpp=.o}
 
 all:	${NAME}
 
 $(NAME):	${OBJS}
-			${CC} ${CFLAGS} ${VALGRIND} ${FSANITIZE} -o ${NAME} ${OBJS}
+			${CC} ${CFLAGS} ${VALGRIND} ${FSANITIZE} ${OBJS} -o ${NAME} 
 
 clean:
 			${RM} ${OBJS}
