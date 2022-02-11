@@ -1,26 +1,26 @@
 NAME = megaphone
 
-SRCS =	megaphone.cpp\
+SRCS =	Megaphone.cpp\
 
 OBJS = ${SRCS:.cpp=.o}
 
-CC = clang++
+CXX = clang++
 
-CFLAGS = -Wall -Werror -Wextra -Wno-unused -std=c++98 -pedantic
+CPPFLAGS = -Wall -Werror -Wextra -Wno-unused -std=c++98 -pedantic
 
-RM = rm
+RM = rm -rf
 
-#FSANITIZE = -ggdb -fsanitize=address -fno-omit-frame-pointer
+#FSANITIZE = -ggdb -fsanitize=address
 
 #VALGRIND = -ggdb
 
-.c.o:
-		${CC} ${CFLAGS} -c $< -o ${<:.cpp=.o}
+.cpp.o:
+		${CXX} ${CPPFLAGS} -c $< -o $@
 
 all:	${NAME}
 
 $(NAME):	${OBJS}
-			${CC} ${CFLAGS} ${VALGRIND} ${FSANITIZE} -o ${NAME} ${OBJS}
+			${CXX} ${CPPFLAGS} ${VALGRIND} ${FSANITIZE} ${OBJS} -o $@ 
 
 clean:
 			${RM} ${OBJS}

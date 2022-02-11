@@ -6,11 +6,11 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 13:48:59 by erecuero          #+#    #+#             */
-/*   Updated: 2022/02/10 18:30:24 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/02/11 15:08:14 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Account.hpp"
+#include "Account.hpp"
 #include <iostream>
 #include <ctime>
 #include <iomanip>
@@ -122,18 +122,15 @@ void	Account::_displayTimestamp( void ) {
 
 	std::time_t result = std::time(NULL);
 	tm* timePtr = localtime(&result);
-	std::cout << "["
-		<< timePtr->tm_year + 1900
-		<< std::setw(2) << std::right << std::setfill('0')
-		<< timePtr->tm_mon + 1
-		<< std::setw(2) << std::right << std::setfill('0')
-		<< timePtr->tm_mday
-		<< "_"
-		<< std::setw(2) << std::right << std::setfill('0')
-		<< timePtr->tm_hour
-		<< std::setw(2) << std::right << std::setfill('0')
-		<< timePtr->tm_min
-		<< std::setw(2) << std::right << std::setfill('0')
-		<< timePtr->tm_sec
-		<< "] ";
+	std::cout << "[" << timePtr->tm_year + 1900;
+	std::cout << std::setw(2) << std::right << std::setfill('0');
+	std::cout << timePtr->tm_mon + 1;
+	std::cout << std::setw(2) << std::right << std::setfill('0');
+	std::cout << timePtr->tm_mday << "_";
+	std::cout << std::setw(2) << std::right << std::setfill('0');
+	std::cout << timePtr->tm_hour;
+	std::cout << std::setw(2) << std::right << std::setfill('0');
+	std::cout << timePtr->tm_min;
+	std::cout << std::setw(2) << std::right << std::setfill('0');
+	std::cout << timePtr->tm_sec << "] ";
 }

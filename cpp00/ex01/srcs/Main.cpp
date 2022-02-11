@@ -6,11 +6,12 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:44:01 by erecuero          #+#    #+#             */
-/*   Updated: 2022/02/10 13:49:36 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/02/11 15:25:38 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/PhoneBook.hpp"
+#include <stdlib.h> 
 
 int 	Contact::_nbInst = 0;
 
@@ -22,7 +23,7 @@ void	intro( void ) {
 	std::cout << "-> enter 'EXIT' for existing (you'll lose all the contacts)" << std::endl;
 }
 
-void	searchFunBook( PhoneBook funbook ) {
+bool	searchFunBook( PhoneBook funbook ) {
 
 	std::string				input;
 	int						index(-1);
@@ -35,14 +36,14 @@ void	searchFunBook( PhoneBook funbook ) {
 			std::cout << "> Select an index: " << std::endl;
 			if (!getline(std::cin, input, '\n')) {
 				std::cout << "error in input\n";
-				return ;
+				return false;
 			}
 			else if (input.length() == 1 && std::isdigit(input[0]))
-				index = std::stoi(input, &sz);
+				index = input[0] - '0';
 		} while (index < 0 || index >= funbook.getIsSet());
 		funbook.displayContact(index);
 	}
-	return ;
+	return true;
 }
 
 int	main( void ) {
@@ -64,7 +65,8 @@ int	main( void ) {
 			}
 		}
 		else if (input.compare("SEARCH") == 0)
-			searchFunBook(funbook);
+			if (searchFunBook(funbook) == false)
+				return 1;				
 	} while (input != "EXIT");
 	return 0;
 }

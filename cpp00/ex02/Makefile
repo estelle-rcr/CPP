@@ -1,15 +1,15 @@
 NAME = account
 
 SRCS =	Account.cpp\
-		tests.cpp
+		Tests.cpp
 
 INCL = includes
 
 OBJS = ${addprefix srcs/,${SRCS:.cpp=.o}}
 
-CC = clang++
+CXX = clang++
 
-CFLAGS = -Wall -Werror -Wextra -Wno-unused -std=c++98 -pedantic
+CPPFLAGS = -Wall -Werror -Wextra -Wno-unused -std=c++98 -pedantic
 
 RM = rm -rf
 
@@ -17,13 +17,13 @@ RM = rm -rf
 
 #VALGRIND = -ggdb
 
-.c.o:
-		${CC} ${CFLAGS} -I${INCL} -c $< -o ${<:.cpp=.o}
+.cpp.o:
+		${CXX} ${CPPFLAGS} -I${INCL} -c $< -o ${<:.cpp=.o}
 
 all:	${NAME}
 
 $(NAME):	${OBJS}
-			${CC} ${CFLAGS} ${VALGRIND} ${FSANITIZE} ${OBJS} -o ${NAME} 
+			${CXX} ${CPPFLAGS} ${VALGRIND} ${FSANITIZE} ${OBJS} -o ${NAME} 
 
 clean:
 			${RM} ${OBJS}
