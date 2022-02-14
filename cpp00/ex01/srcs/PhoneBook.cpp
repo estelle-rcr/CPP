@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 18:28:44 by erecuero          #+#    #+#             */
-/*   Updated: 2022/01/28 19:16:12 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/01/28 19:20:13 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,6 @@ PhoneBook::PhoneBook( std::string a1, std::string a2, std::string a3, std::strin
 
 	this->_index = 0;
 	this->_set = 0;
-//	this->attributes[0] = "Last Name";
-//	this->attributes[1] = "First Name";
-//	this->attributes[2] = "Nick Name";
-//	this->attributes[3] = "Phone Number";
-//	this->attributes[4] = "Darkest secret";
 	this->attributes[0] = a1;
 	this->attributes[1] = a2;
 	this->attributes[2] = a3;
@@ -44,7 +39,7 @@ bool	PhoneBook::addContact( void ) {
 			return ret;
 	//	if (sizeof(this->_contacts) / (sizeof(Contact) * 8) > this->_index)		// this->_contacts[this->_index].isSet() // newContact._NbInst > this->_index
 	//		this->_contacts[this->_index].removeAttributes();				// not sure if needed (reassignment handled by C++)
-		this->_contacts[this->_index] = newContact;							// set up attributes from phonebook attributes
+		this->_contacts[this->index] = newContact;							// set up attributes from phonebook attributes
 		this->_index++;
 		return ret;
 	}
@@ -86,7 +81,7 @@ bool	PhoneBook::searchContact( void ) const {
 					<< display_cell("NICK NAME", 10) << "|"
 					<< std::endl;
 //	std::cout << this->_contacts[0].getAttribute(0) << std::endl;
-	for (int i = 0; i < this->_set; i++) {
+	for (int i = 0; i < this->_set; i++) {									// to correct
 		std::cout << "|" << std::setw(10)
 			<< this->_contacts[i].getIndex() << "|"
 			<< display_cell(this->_contacts[i].getAttribute(1), 10) << "|"
