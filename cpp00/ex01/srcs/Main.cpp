@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 15:44:01 by erecuero          #+#    #+#             */
-/*   Updated: 2022/01/28 19:14:12 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/02/14 12:20:41 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/PhoneBook.hpp"
-#include <cctype>
+#include <stdlib.h> 
 
 int 	Contact::_nbInst = 0;
 
@@ -22,83 +22,51 @@ void	intro( void ) {
 	std::cout << "-> enter 'SEARCH' for displaying a contact information" << std::endl;
 	std::cout << "-> enter 'EXIT' for existing (you'll lose all the contacts)" << std::endl;
 }
-/*
-std::string	getInput( void ) {
 
-	std::string	buffer;
+bool	searchFunBook( PhoneBook funbook ) {
 
-	if (!getline(std::cin, buffer, '\n')) {
-		std::cout << "error in input\n";
-		return NULL;
-	}
-	else if (std::cin.eof() == 1) {
-		std::cout << "error with end-of-file\n";
-		return NULL;
-	}
-	return buffer;
-}*/
-
-void	searchFunBook( PhoneBook funbook ) {
-
-	std::string	input;
-	int			index;
-	std::string::size_type sz;   // alias of size_t
+	std::string				input;
+	int						index(-1);
+	std::string::size_type	sz;
 
 	if (funbook.searchContact() == false)
 		std::cout << "\nNo contact to be displayed yet.\n" << std::endl;
 	else {
-		std::cout << "> Select an index: " << std::endl;
 		do {
+			std::cout << "> Select an index: " << std::endl;
 			if (!getline(std::cin, input, '\n')) {
 				std::cout << "error in input\n";
-				return ;
+				return false;
 			}
-			index = std::stoi(input,&sz);
-		} while (index < 0 || index >= NB_CONTACTS);
-// try {
-//	index = std::stoi(input,&sz)
-//}
-//		catch (std::invalid_argument const& ex) {
- //       	std::cout << "#2: " << ex.what() << '\n';
- //   	}
+			else if (input.length() == 1 && std::isdigit(input[0]))
+				index = input[0] - '0';
+		} while (index < 0 || index >= funbook.getIsSet());
 		funbook.displayContact(index);
 	}
-	return ;
+	return true;
 }
 
 int	main( void ) {
 
-	PhoneBook funbook("Last Name", "First Name", "Nick Name", "Phone Number", "Darkest secret");
+	PhoneBook funbook("First Name", "Last Name", "Nick Name", "Phone Number", "Darkest secret");
 	std::string	input;
 
 	std::cout << "Welcome in your FunBook!" << std::endl;
-	intro();
-	if (!getline(std::cin, input, '\n')) {
-		std::cout << "\nerror in input\n" << std::endl;
-		return 1;
-	}
-	while (input != "EXIT") {
-		printf("test MAIN %i\n", Contact::getNbInst());
-		if (input.compare("ADD") == 0)
-		{
+	do {
+		intro();
+		if (!getline(std::cin, input, '\n')) {
+			std::cout << "\nerror in input\n" << std::endl;
+			return 1;
+		}
+		if (input.compare("ADD") == 0) {
 			if (funbook.addContact() == false) {
 				std::cout << "\nerror in adding a contact" << std::endl;
 				return 1;
 			}
 		}
 		else if (input.compare("SEARCH") == 0)
-			searchFunBook(funbook);
-		intro();
-		if (!getline(std::cin, input, '\n')) {
-			std::cout << "\nerror in input\n" << std::endl;
-			return 1;
-		}
-	}
+			if (searchFunBook(funbook) == false)
+				return 1;				
+	} while (input != "EXIT");
 	return 0;
 }
-
-//		"Last name"
-//	"First name"
-//	"Nick name"
-//	"Phone Number"
-//	"Darkest secret"

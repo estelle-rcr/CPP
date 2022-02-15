@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 16:33:54 by erecuero          #+#    #+#             */
-/*   Updated: 2022/01/28 19:14:09 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/02/10 13:52:33 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,9 @@
 Contact::Contact( void ) {
 
 	Contact::_nbInst += 1;
-	this->attributes[0] = "Last Name";
-	this->attributes[1] = "First Name";
+	this->_index = -1;
+	this->attributes[0] = "First Name";
+	this->attributes[1] = "Last Name";
 	this->attributes[2] = "Nick Name";
 	this->attributes[3] = "Phone Number";
 	this->attributes[4] = "Darkest secret";
@@ -34,14 +35,15 @@ bool	Contact::setAttribute( int i ) {
 
 	std::string	buffer;
 
-	std::cout << this->attributes[i] << " : ";
-	if (!getline(std::cin, buffer, '\n'))
-	{
-		std::cin.ignore();
-		return false;
-	}
-	switch (i)
-	{
+	do {
+		std::cout << this->attributes[i] << " : ";
+		if (!getline(std::cin, buffer, '\n'))
+		{
+			std::cin.ignore();
+			return false;
+		}
+	} while (buffer.empty() == true);
+	switch (i) {
 		case 0:
 			this->_lastName = buffer;
 		case 1:
@@ -58,7 +60,7 @@ bool	Contact::setAttribute( int i ) {
 
 bool	Contact::createContact( int indexInput ) {
 
-	std::cout << "> Adding a new contact" << std::endl;
+	std::cout << "\n> Adding a new contact:" << std::endl;
 	if (!Contact::setAttribute(0)
 		|| !Contact::setAttribute(1)
 		|| !Contact::setAttribute(2)
@@ -90,20 +92,6 @@ std::string	Contact::getAttribute( int i ) const {
 int		Contact::getIndex( void ) const {
 
 	return this->_index;
-}
-
-void	Contact::removeAttributes( void )
-{
-	if (this->_lastName.empty() == false)		//.isSet ?
-		this->_lastName.clear();
-	if (this->_firstName.empty() == false)
-		this->_firstName.clear();
-	if (this->_nickName.empty() == false)
-		this->_nickName.clear();
-	if (this->_phoneNb.empty() == false)
-		this->_phoneNb.clear();
-	if (this->_darkestSecret.empty() == false)
-		this->_darkestSecret.clear();
 }
 
 int		Contact::getNbInst( void ) {

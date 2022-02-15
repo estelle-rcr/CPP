@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 17:43:12 by erecuero          #+#    #+#             */
-/*   Updated: 2022/01/27 14:48:18 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/02/11 15:27:28 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ int	main(int ac, char **av) {
 	
 	int	i;
 	int j;
-	char var;
 	std::locale loc;
 
 	i = 1;

@@ -1,14 +1,10 @@
-NAME = funbook
+NAME = hithisisbrain
 
-SRCS =	Main.cpp\
-		Contact.cpp\
-		PhoneBook.cpp
+SRCS =	main.cpp\
 
-OBJS	=${addprefix srcs/,${SRCS:.cpp=.o}}
+OBJS = ${SRCS:.cpp=.o}
 
 INCL = includes
-
-OBJS = ${addprefix srcs/,${SRCS:.cpp=.o}}
 
 CXX = clang++
 

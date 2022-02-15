@@ -1,10 +1,7 @@
-NAME = funbook
+NAME = account
 
-SRCS =	Main.cpp\
-		Contact.cpp\
-		PhoneBook.cpp
-
-OBJS	=${addprefix srcs/,${SRCS:.cpp=.o}}
+SRCS =	Account.cpp\
+		Tests.cpp
 
 INCL = includes
 

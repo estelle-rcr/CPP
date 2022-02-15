@@ -1,14 +1,13 @@
-NAME = funbook
+NAME = welcomeZombie
 
-SRCS =	Main.cpp\
-		Contact.cpp\
-		PhoneBook.cpp
+SRCS =	main.cpp\
+		Zombie.cpp\
+		newZombie.cpp\
+		randomChump.cpp
 
-OBJS	=${addprefix srcs/,${SRCS:.cpp=.o}}
+OBJS = ${SRCS:.cpp=.o}
 
 INCL = includes
-
-OBJS = ${addprefix srcs/,${SRCS:.cpp=.o}}
 
 CXX = clang++
 
@@ -18,7 +17,7 @@ RM = rm -rf
 
 #FSANITIZE = -ggdb -fsanitize=address
 
-#VALGRIND = -ggdb
+VALGRIND = -ggdb
 
 .cpp.o:
 		${CXX} ${CPPFLAGS} -I${INCL} -c $< -o ${<:.cpp=.o}

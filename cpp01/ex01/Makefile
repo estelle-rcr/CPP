@@ -1,14 +1,12 @@
-NAME = funbook
+NAME = zombieHorde
 
-SRCS =	Main.cpp\
-		Contact.cpp\
-		PhoneBook.cpp
+SRCS =	main.cpp\
+		Zombie.cpp\
+		ZombieHorde.cpp\
 
-OBJS	=${addprefix srcs/,${SRCS:.cpp=.o}}
+OBJS = ${SRCS:.cpp=.o}
 
 INCL = includes
-
-OBJS = ${addprefix srcs/,${SRCS:.cpp=.o}}
 
 CXX = clang++
 
