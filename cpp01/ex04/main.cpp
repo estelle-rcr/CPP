@@ -6,41 +6,40 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 17:17:13 by erecuero          #+#    #+#             */
-/*   Updated: 2022/02/15 17:25:10 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/02/15 17:40:50 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <fstream>
-#include <string>
+#include "NewSed.hpp"
 
 int main( int ac, char *av ) {
 
-	std::ifstream	input;
-	std::ofstream	output;
-	std::string		file;
+	std::fstream	input;
+	std::fstream	output;
+	std::string		infile;
+	std::string		outfile;
 
 	if (ac != 4) {
-		std::cout << "Wrong number of args\n";
+		std::cout << "Wrong number of args" << std::endl;;
 		return 1;
 	}
-	file = argv[1];
-	input.open(file, std::ios::in);
+	infile = av[1];
+	input.open(infile, std::ios::in);
 	if (input.fail())
 	{
-		std::cout << "Error: cannot open file " << filename << std::endl;
+		std::cout << "Error: cannot open infile " << std::endl;
 		return (EXIT_FAILURE);
 	}
-	output.open(out_file_name(file), std::ios::in | std::ios::trunc);
+	outfile = infile + ".replace";
+	output.open(outfile, std::ios::out | std::ios::trunc);
 	if (output.fail())
 	{
-		std::cout << "Error: cannot create file " << out_file_name(filename) << std::endl;
+		std::cout << "Error: cannot create outfile " << std::endl;
 		return (EXIT_FAILURE);
 	}
-	loser_sed(argv[2], argv[3], input, output);
-
-
+	newSed(argv[2], argv[3], input, output);
 }
+
 
 
    newfile.open("tpoint.txt",ios::out);  // open a file to perform write operation using file object
