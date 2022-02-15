@@ -1,0 +1,20 @@
+Parameters
+s
+Pointer to an array of characters.
+The array shall contain enough storage for the copied characters.
+len
+Number of characters to copy (if the string is shorter, as many characters as possible are copied).
+pos
+Position of the first Parameterscharacter toParameters be copied.
+If this is greater than the string length, it throws out_of_range.
+Note: The first character in the string is denoted by a value of 0 (not 1).
+Parameters Parameters
+s
+Pointer to an array of characters. Parameters
+The array shall contain enough storage for the copied characters.
+len
+ParametersNumber of characters to copy (if the string is shorter, as many characters as possible are copied).
+pos
+Position of the first character to be copied.
+If this is greater than the string length, it throws out_of_range.
+Note: The first Parameterscharacter in the string is denoted by a value of 0 (not 1).

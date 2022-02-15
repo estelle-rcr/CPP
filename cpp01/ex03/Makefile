@@ -11,8 +11,8 @@ ifeq ($(shell uname -s),Darwin)
 endif
 
 #The Target Binary Program
-TARGET				:= violence
-TARGET_BONUS		:= violence-bonus
+TARGET				:= nowar
+TARGET_BONUS		:= nowar-bonus
 
 BUILD				:= release
 
@@ -22,7 +22,7 @@ include sources.mk
 SRCDIR				:= srcs
 INCDIR				:= includes
 BUILDDIR			:= obj
-TARGETDIR			:= binary
+TARGETDIR			:= .
 SRCEXT				:= cpp
 DEPEXT				:= d
 OBJEXT				:= o
@@ -84,7 +84,7 @@ clean:
 
 # Full Clean, Objects and Binaries
 fclean: clean
-	@$(RM) -rf $(TARGETDIR)
+	@$(RM) -rf $(TARGET)
 
 
 # Pull in dependency info for *existing* .o files
