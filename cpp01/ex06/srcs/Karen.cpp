@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 15:41:57 by erecuero          #+#    #+#             */
-/*   Updated: 2022/02/16 15:59:09 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/02/16 16:46:07 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,19 +60,14 @@ void	Karen::complain( std::string level ) {
 		&Karen::error
 	};
 	int i(0);
-	bool found(false);
 
 	while (i < 4)
 	{
-		if (level == this->_levels[i] || found == true)
+		if (level == this->_levels[i])
 		{
-			std::cout << "[ " << this->_levels[i] << " ]" << std::endl;
 			(this->*f[i])();
-			found = true;
-			std::cout << std::endl;
+			return ;
 		}
 		i++;
 	}
-	if (found == false)
-		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 }
