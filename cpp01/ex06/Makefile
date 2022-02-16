@@ -1,7 +1,7 @@
-NAME = newSed
+NAME = karenFilter
 
 SRCS =	main.cpp\
-		NewSed.cpp\
+		Karen.cpp\
 
 OBJS	=${addprefix srcs/,${SRCS:.cpp=.o}}
 
@@ -15,7 +15,7 @@ RM = rm -rf
 
 #FSANITIZE = -ggdb -fsanitize=address
 
-#VALGRIND = -ggdb
+VALGRIND = -ggdb
 
 .cpp.o:
 		${CXX} ${CPPFLAGS} -I${INCL} -c $< -o ${<:.cpp=.o}

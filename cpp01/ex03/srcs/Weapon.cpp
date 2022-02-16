@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 14:19:58 by erecuero          #+#    #+#             */
-/*   Updated: 2022/02/14 23:35:16 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/02/16 13:39:56 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ Weapon::~Weapon( void ) {
 	return ;
 }
 
-std::string const &	Weapon::getType( void ) {
+std::string const &	Weapon::getType( void ) const {
 
-	return (this->_type);
+	return this->_type;
 }
 
 std::string const & Weapon::setType( std::string newType ) {

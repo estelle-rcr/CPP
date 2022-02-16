@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 14:20:11 by erecuero          #+#    #+#             */
-/*   Updated: 2022/02/14 17:37:49 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/02/16 13:52:02 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,18 @@
 
 class Weapon {
 
-private:
+	public:
 
-	std::string _type;
+		Weapon( std::string type );
+		~Weapon();
 
-public:
+		std::string const & getType( void ) const;
+		std::string const & setType( std::string newType );
 
-	Weapon( std::string type );
-	~Weapon();
+	private:
 
-	std::string const & getType( void );
-	std::string const & setType( std::string newType );
+		std::string _type;
+
 };
 
 #endif

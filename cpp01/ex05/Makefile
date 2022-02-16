@@ -1,7 +1,7 @@
-NAME = newSed
+NAME = karen
 
 SRCS =	main.cpp\
-		NewSed.cpp\
+		Karen.cpp\
 
 OBJS	=${addprefix srcs/,${SRCS:.cpp=.o}}
 

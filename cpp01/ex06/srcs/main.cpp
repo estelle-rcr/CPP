@@ -1,38 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/14 14:20:08 by erecuero          #+#    #+#             */
-/*   Updated: 2022/02/16 13:51:41 by erecuero         ###   ########.fr       */
+/*   Created: 2022/02/16 15:41:25 by erecuero          #+#    #+#             */
+/*   Updated: 2022/02/16 15:47:49 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __HUMANB_HPP__
-# define __HUMANB_HPP__
+#include "Karen.hpp"
 
-#include <stdio.h>
-#include <iostream>
-#include <string.h>
-#include "Weapon.hpp"
+int main ( int ac, char **av ) {
 
-class HumanB {
+	Karen karen;
 
-	public:
-
-		HumanB( std::string name );
-		~HumanB();
-
-		void	attack( void );
-		void	setWeapon( Weapon &weapon );
-
-	private:
-
-		std::string	_name;
-		Weapon		*_weapon;
-
-};
-
-#endif
+	if (ac == 2) {
+		karen.complain(av[1]);
+		return 0;
+	}
+	else
+		std::cout << "wrong number of args" << std::endl;
+	return 1;
+}

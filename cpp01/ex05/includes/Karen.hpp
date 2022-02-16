@@ -1,37 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*   Karen.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/14 14:20:08 by erecuero          #+#    #+#             */
-/*   Updated: 2022/02/16 13:51:41 by erecuero         ###   ########.fr       */
+/*   Created: 2022/02/16 13:48:16 by erecuero          #+#    #+#             */
+/*   Updated: 2022/02/16 15:14:57 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __HUMANB_HPP__
-# define __HUMANB_HPP__
+#ifndef __KAREN_HPP__
+# define __KAREN_HPP__
 
-#include <stdio.h>
 #include <iostream>
-#include <string.h>
-#include "Weapon.hpp"
 
-class HumanB {
+class Karen {
 
 	public:
+		Karen();
+		~Karen();
 
-		HumanB( std::string name );
-		~HumanB();
-
-		void	attack( void );
-		void	setWeapon( Weapon &weapon );
+		void	complain(std::string level);
 
 	private:
-
-		std::string	_name;
-		Weapon		*_weapon;
+		void	debug();
+		void	info();
+		void	warning();
+		void	error();
+		std::string		_levels[4];
 
 };
 

@@ -1,14 +1,12 @@
 NAME = funbook
 
-SRCS =	Main.cpp\
+SRCS =	main.cpp\
 		Contact.cpp\
 		PhoneBook.cpp
 
 OBJS	=${addprefix srcs/,${SRCS:.cpp=.o}}
 
 INCL = includes
-
-OBJS = ${addprefix srcs/,${SRCS:.cpp=.o}}
 
 CXX = clang++
 
@@ -26,7 +24,7 @@ RM = rm -rf
 all:	${NAME}
 
 $(NAME):	${OBJS}
-			${CXX} ${CPPFLAGS} ${VALGRIND} ${FSANITIZE} ${OBJS} -o ${NAME} 
+			${CXX} ${CPPFLAGS} ${VALGRIND} ${FSANITIZE} ${OBJS} -o ${NAME}
 
 clean:
 			${RM} ${OBJS}
