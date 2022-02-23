@@ -1,7 +1,7 @@
-NAME = newSed
+NAME = fixedPointNumber
 
 SRCS =	main.cpp\
-		NewSed.cpp\
+		Fixed.cpp
 
 OBJS	=${addprefix srcs/,${SRCS:.cpp=.o}}
 

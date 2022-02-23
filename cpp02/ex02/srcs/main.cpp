@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   classA.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/14 14:20:06 by erecuero          #+#    #+#             */
-/*   Updated: 2022/02/14 15:35:45 by erecuero         ###   ########.fr       */
+/*   Created: 2022/02/21 17:08:35 by erecuero          #+#    #+#             */
+/*   Updated: 2022/02/23 22:19:14 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __A_HPP__
-# define __A_HPP__
+#include "Fixed.hpp"
 
-#include <stdio.h>
-#include <iostream>
-#include <string.h>
+int	main( void ) {
 
-class A {
+	Fixed a;
+	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
 
-private:
-
-	std::string _name;
-
-public:
-
-	A();
-	~A();
-
-};
-
-#endif
+	std::cout << a << std::endl;
+	std::cout << ++a << std::endl;
+	std::cout << a << std::endl;
+	std::cout << a++ << std::endl;
+	std::cout << a << std::endl;
+	std::cout << b << std::endl;
+	std::cout << Fixed::max( a, b ) << std::endl;
+	return 0;
+}

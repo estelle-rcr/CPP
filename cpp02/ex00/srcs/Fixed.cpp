@@ -6,13 +6,13 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 17:09:58 by erecuero          #+#    #+#             */
-/*   Updated: 2022/02/21 17:44:17 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/02/23 12:44:54 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed( void ) : _value( 0 ) {
+Fixed::Fixed( void ) : _rawBits( 0 ) {
 
 	std::cout << "Default constructor called" << std::endl;
 	return ;
@@ -35,27 +35,24 @@ Fixed & Fixed::operator=( Fixed const & rhs ) {
 
 	std::cout << "Copy assignment operator called" << std::endl;
 	if ( this != &rhs )
-		this->_value = rhs.getRawBits();
-
+		this->_rawBits = rhs.getRawBits();
 	return *this;
 }
 
 int		Fixed::getRawBits( void ) const {
 
 	std::cout << "getRawBits member function called" << std::endl;
-	return this->_value;
+	return this->_rawBits;
 }
 
-int		Fixed::setRawBits( int const raw ) {
+void	Fixed::setRawBits( int const raw ) {
 
 	std::cout << "setRawBits member function called" << std::endl;
-	this->_value = raw;
-	return  this->_value;
+	this->_rawBits = raw;
 }
 
 std::ostream & operator<<( std::ostream & o, Fixed const & i ) {
-	
-	o << i.getRawBits();
 
+	o << i.getRawBits();
 	return o;
 }
