@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 17:17:13 by erecuero          #+#    #+#             */
-/*   Updated: 2022/02/16 16:15:54 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/02/18 16:51:51 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@
 // There are two files included: a basic infile with a repetition of the word "Parameters" (alone on one line, twice on the same line, multiple times in a sentence) and an output file with an extract of a result.
 //
 // Try to replace the occurences of 'Parameters' from the first file with any word (capitalized helps find them):
-// ./newsed "tests/infile" "Parameters" "TEST"
+// ./newSed "tests/infile" "Parameters" "TEST"
 //
 // Then you can try : deleting the output file and retry the former command,
 // Also try an empty file or string:
-// ./newsed "tests/infile" "Parameters" ""
+// ./newSed "tests/infile" "Parameters" ""
 // Finally try changing the rights on the infile using:
 // chmod 000 tests/infile
 */
@@ -102,24 +102,3 @@ int main( int ac, char **av ) {
 	output.close();
 	return 0;
 }
-
-
-/*
-   newfile.open("tpoint.txt",ios::out);  // open a file to perform write operation using file object
-   if(newfile.is_open()) //checking whether the file is open
-   {
-      newfile<<"Tutorials point \n";   //inserting text
-      newfile.close();    //close the file object
-   }
-   newfile.open("tpoint.txt",ios::in); //open a file to perform read operation using file object
-   if (newfile.is_open()){   //checking whether the file is open
-      string tp;
-      while(getline(newfile, tp)){ //read data from file object and put it into string.
-         cout << tp << "\n"; //print the data of the string
-      }
-      newfile.close(); //close the file object.
-   }
-
-
-
-*/
