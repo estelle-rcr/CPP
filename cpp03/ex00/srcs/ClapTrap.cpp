@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 23:34:47 by erecuero          #+#    #+#             */
-/*   Updated: 2022/02/24 16:39:41 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/02/25 16:28:07 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,8 @@ ClapTrap & 	ClapTrap::operator=( ClapTrap const & rhs ) {
 void		ClapTrap::attack(const std::string & target) {
 
 	if (target.empty()) {
-		std::cout << this->_name << " doesn't seem to attack anyone around." << std::endl;
+		std::cout << "ClapTrap " << this->_name 
+			<< " doesn't seem to attack anyone around." << std::endl;
 		return ;
 	}
 	else if (this->_hitPoints <= 0) {
@@ -58,7 +59,8 @@ void		ClapTrap::attack(const std::string & target) {
 		return ;
 	}
 	else if (this->_energyPoints <= 0) {
-		std::cout << this->_name << " doesn't have enough energy points to attack." << std::endl;
+		std::cout << "ClapTrap " << this->_name 
+			<< " doesn't have enough energy points to attack." << std::endl;
 		return ;
 	}
 	this->_energyPoints--;
@@ -71,7 +73,7 @@ void		ClapTrap::takeDamage(unsigned int amount) {
 
 	if (this->_hitPoints <= 0) {
 		std::cout << "ClapTrap " << this->_name
-			<< " doesn't have hit points anymore, it's already dead." << std::endl;
+			<< " doesn't have hit points anymore, it cannot take more damage." << std::endl;
 		return ;
 	}
 	std::cout << "ClapTrap " << this->_name << " takes " << amount << " points of damage!" << std::endl;
@@ -89,15 +91,17 @@ void		ClapTrap::beRepaired(unsigned int amount) {
 		return ;
 	}
 	else if (this->_energyPoints <= 0) {
-		std::cout << this->_name << " doesn't have enough energy points to repair itself." << std::endl;
+		std::cout << "ClapTrap " << this->_name 
+			<< " doesn't have enough energy points to repair itself." << std::endl;
 		return ;
 	}
 	else if (amount < 0) {
-		std::cout << this->_name << " doesn't seem to repair itself." << std::endl;
+		std::cout << "ClapTrap " << this->_name 
+			<< " doesn't seem to repair itself." << std::endl;
 		return ;
 	}
 	this->_energyPoints--;
 	this->_hitPoints += amount;
-	std::cout << "ClapTrap" << this->_name << " has repaired " << amount << " hit points!" << std::endl;
+	std::cout << "ClapTrap " << this->_name << " has repaired " << amount << " hit points!" << std::endl;
 }
 

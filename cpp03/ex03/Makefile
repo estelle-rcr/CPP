@@ -1,8 +1,9 @@
-NAME = ScavTrap
+NAME = FragTrap
 
 SRCS =	main.cpp\
 		ClapTrap.cpp\
-		ScavTrap.cpp
+		ScavTrap.cpp\
+		FragTrap.cpp
 
 OBJS	=${addprefix srcs/,${SRCS:.cpp=.o}}
 
