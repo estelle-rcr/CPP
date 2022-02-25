@@ -6,16 +6,17 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 23:56:53 by erecuero          #+#    #+#             */
-/*   Updated: 2022/02/24 16:40:51 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/02/25 09:35:18 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main ( void ) {
 
 	ClapTrap	clap("clapclap");
-	ClapTrap	clip(clap);
+	ScavTrap	clip("clip");
 
 
 	clap.attack("clipclip");

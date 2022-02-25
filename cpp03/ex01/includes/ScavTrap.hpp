@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/23 23:56:53 by erecuero          #+#    #+#             */
-/*   Updated: 2022/02/24 16:40:51 by erecuero         ###   ########.fr       */
+/*   Created: 2022/02/25 09:29:23 by erecuero          #+#    #+#             */
+/*   Updated: 2022/02/25 09:29:26 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
+
 #include "ClapTrap.hpp"
 
-int main ( void ) {
+class ScavTrap : public ClapTrap
+{
+	public:
 
-	ClapTrap	clap("clapclap");
-	ClapTrap	clip(clap);
+		ScavTrap( void );
+		ScavTrap( std::string name);
+		ScavTrap( ScavTrap const & src );
+		~ScavTrap();
 
+		ScavTrap &	operator=( ScavTrap const & rhs );
 
-	clap.attack("clipclip");
-	clap.takeDamage(20);
-	clap.attack("clapclap");
-	clip.takeDamage(5);
-	clip.beRepaired(3);
-	clap.attack("");
-	clip.takeDamage(2);
-	clap.beRepaired(5);
-	clap.attack("clapclap");
-	clip.attack("clipclip");
-	return 0;
-}
+		void		attack(std::string const & target);
+		void		guardGate( void ) const;
+
+	private:
+};
+
+#endif
