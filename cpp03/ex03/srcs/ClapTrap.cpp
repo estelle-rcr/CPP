@@ -6,13 +6,13 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 23:34:47 by erecuero          #+#    #+#             */
-/*   Updated: 2022/02/25 16:26:48 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/02/28 12:07:15 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap::ClapTrap( void ) : _name("default"), _hitPoints(10), _energyPoints(10), _attackDamage(0) {
+ClapTrap::ClapTrap( void ) : _name("default"), _hitPoints(10), _energyPoints(10), _attackDamage(0) {
 
 	std::cout << "ClapTrap default constructor called" << std::endl;
 	return ;
@@ -49,7 +49,7 @@ ClapTrap & 	ClapTrap::operator=( ClapTrap const & rhs ) {
 void		ClapTrap::attack(const std::string & target) {
 
 	if (target.empty()) {
-		std::cout << "ClapTrap " << this->_name 
+		std::cout << "ClapTrap " << this->_name
 			<< " doesn't seem to attack anyone around." << std::endl;
 		return ;
 	}
@@ -59,7 +59,7 @@ void		ClapTrap::attack(const std::string & target) {
 		return ;
 	}
 	else if (this->_energyPoints <= 0) {
-		std::cout << "ClapTrap " << this->_name 
+		std::cout << "ClapTrap " << this->_name
 			<< " doesn't have enough energy points to attack." << std::endl;
 		return ;
 	}
@@ -91,12 +91,12 @@ void		ClapTrap::beRepaired(unsigned int amount) {
 		return ;
 	}
 	else if (this->_energyPoints <= 0) {
-		std::cout << "ClapTrap " << this->_name 
+		std::cout << "ClapTrap " << this->_name
 			<< " doesn't have enough energy points to repair itself." << std::endl;
 		return ;
 	}
 	else if (amount < 0) {
-		std::cout << "ClapTrap " << this->_name 
+		std::cout << "ClapTrap " << this->_name
 			<< " doesn't seem to repair itself." << std::endl;
 		return ;
 	}
