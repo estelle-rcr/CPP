@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 23:56:53 by erecuero          #+#    #+#             */
-/*   Updated: 2022/02/25 16:29:07 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/02/28 10:53:36 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,6 @@ int main ( void ) {
 	clap.takeDamage(0);
 	std::cout << "<<< CLUP ACTIONS: >>>" << std::endl;
 	clup.takeDamage(0);
+	clup.attack("");
 	return 0;
 }

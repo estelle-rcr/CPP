@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 17:00:26 by erecuero          #+#    #+#             */
-/*   Updated: 2022/02/25 17:30:45 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/02/28 10:15:27 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,11 @@
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 
-class DiamondTrap : virtual public ClapTrap, public ScavTrap, public FragTrap
+class DiamondTrap : public ScavTrap, public FragTrap
 {
+	private:
+		std::string 	_name;
+
 	public:
 
 		DiamondTrap( void );
@@ -28,11 +31,8 @@ class DiamondTrap : virtual public ClapTrap, public ScavTrap, public FragTrap
 
 		DiamondTrap &	operator=( DiamondTrap const & rhs );
 
-		
-		void whoAmI();
-
-	private:
-		std::string 	_name;
+		void			attack( std::string const & target );
+		void 			whoAmI( void );
 };
 
 #endif

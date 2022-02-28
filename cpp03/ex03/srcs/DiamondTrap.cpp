@@ -6,35 +6,55 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 17:03:44 by erecuero          #+#    #+#             */
-/*   Updated: 2022/02/25 17:10:31 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/02/28 10:56:26 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap() : ClapTrap(), _name(_name.append("_clap_name")) {
+DiamondTrap::DiamondTrap() : ClapTrap("default_clap_name"), ScavTrap(), FragTrap() {
+
 	std::cout << "DiamondTrap default constructor called" << std::endl;
-	this->_hitPoints = 100;
-	this->_energyPoints = 100;
-	this->_attackDamage = 30;
+	this->DiamondTrap::_name = "default";
+	this->FragTrap::_hitPoints;
+	this->ScavTrap::_energyPoints;
+	this->FragTrap::_attackDamage;
 }
 
-DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name), _name(_name.append("_clap_name")) {
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), ScavTrap(), FragTrap() {
+
 	std::cout << "DiamondTrap name constructor called" << std::endl;
-	this->_hitPoints = 100;
-	this->_energyPoints = 100;
-	this->_attackDamage = 30;
+	this->DiamondTrap::_name = name;
+	this->FragTrap::_hitPoints;
+	this->ScavTrap::_energyPoints;
+	this->FragTrap::_attackDamage;
 }
 
 DiamondTrap::DiamondTrap(DiamondTrap const & src) : ClapTrap(src) {
+
 	std::cout << "DiamondTrap copy constructor called" << std::endl;
 }
 
 DiamondTrap::~DiamondTrap() {
+
 	std::cout << "DiamondTrap destructor called" << std::endl;
 }
 
 DiamondTrap &	DiamondTrap::operator=( DiamondTrap const & rhs ) {
+
 	ClapTrap::operator=(rhs);
 	return (*this);
+}
+
+void	DiamondTrap::attack(const std::string & target) {
+
+	ScavTrap::attack(target);
+}
+
+void 	DiamondTrap::whoAmI( void ) {
+
+	std::cout << "I'm a DiamondTrap named " << this->DiamondTrap::_name
+		<< " but my ClapTrap name is " << this->ClapTrap::_name
+		<< " and I'm wondering who I am and all things in life." << std::endl;
+	return ;
 }

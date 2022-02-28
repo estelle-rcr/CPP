@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 23:56:53 by erecuero          #+#    #+#             */
-/*   Updated: 2022/02/25 16:54:01 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/02/28 10:38:23 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int main ( void ) {
 	clap.beRepaired(5);
 	clap.attack("clip");
 	std::cout << "<<< CLIP ACTIONS: >>>" << std::endl;
-	clip.takeDamage(2);
+	clip.takeDamage(0);
 	clip.attack("clap");
 	std::cout << "<<< CLAP ACTIONS: >>>" << std::endl;
 	clap.takeDamage(20);
