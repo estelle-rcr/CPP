@@ -1,47 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 12:14:51 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/01 15:02:06 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/01 15:02:28 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "WrongCat.hpp"
 
-Cat::Cat( void ) : _type( "cat" ) {
+WrongCat::WrongCat( void ) : _type( "wrong_cat" ) {
 
-	std::cout << "Cat default constructor called" << std::endl;
+	std::cout << "WrongCat default constructor called" << std::endl;
 }
 
-Cat::Cat( Cat const & src ) {
+WrongCat::WrongCat( WrongCat const & src ) {
 
-	std::cout << "Cat copy constructor called" << std::endl;
+	std::cout << "WrongCat copy constructor called" << std::endl;
 	*this = src;
 	return ;
 }
 
-Cat::~Cat() {
+WrongCat::~WrongCat() {
 
-	std::cout << "Cat destructor called" << std::endl;
+	std::cout << "WrongCat destructor called" << std::endl;
 	return ;
 }
 
-Cat &	Cat::operator=( Cat const & rhs ) {
+WrongCat &	WrongCat::operator=( WrongCat const & rhs ) {
 
-	Animal::operator=(rhs);
+	WrongAnimal::operator=(rhs);
 	return (*this);
 }
 
-void		Cat::makeSound(void) const {
+void		WrongCat::makeSound(void) const {
 
 	std::cout << "Meooowwwww" << std::endl;
 }
 
-std::string	Cat::getType( void ) const {
+std::string	WrongCat::getType( void ) const {
 
 	return this->_type;
 }

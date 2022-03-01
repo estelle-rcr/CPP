@@ -6,33 +6,33 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 12:20:27 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/01 15:04:09 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/01 16:14:15 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
+#include "../includes/Animal.hpp"
+#include "../includes/Cat.hpp"
+#include "../includes/Dog.hpp"
 
 int main ( void ) {
 
-	const Animal* meta = new Animal();
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
-	const WrongAnimal* w = new WrongCat();
-	std::cout << i->getType() << " " << std::endl;
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << meta->getType() << " " << std::endl;
-	std::cout << w->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
-	j->makeSound(); //will output the dog sound!
-	meta->makeSound();  //will output the animal sound!
-	w->makeSound();  //will output the WrongAnimal sound!
+	delete j; // ;//should not create a leak
 	delete i;
-	delete j;
-	delete meta;
-	delete w;
+	Dog dog1;
+	Cat cat1;
+	cat1.setIdea(1, "Hello");
+	{
+		Dog dog2 = dog1;
+		Cat cat2 = cat1;
+		std::cout << ">>> Before setting a new idea - copies the first cat <<<" << std::endl;
+		std::cout << cat1.getIdea(1) << std::endl;
+		std::cout << cat2.getIdea(1) << std::endl;
+		cat2.setIdea(1, "I think");
+		std::cout << ">>> After setting a new idea - second cat has his own brain <<<" << std::endl;
+		std::cout << cat1.getIdea(1) << std::endl;
+		std::cout << cat2.getIdea(1) << std::endl;
+	}
 	return 0;
 }
