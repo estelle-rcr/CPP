@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 12:03:04 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/01 18:30:13 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/02 13:48:09 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,17 @@
 
 class Cat : public Animal {
 
-//	protected:
-//		std::string	_type;
+	private:
 
 	public:
 		Cat();
 		Cat( Cat const & src );
 		~Cat();
 
-		virtual void makeSound(void) const;
-	//	virtual std::string	getType( void ) const;
 		Cat & operator=( Cat const & rhs );
+
+		virtual void makeSound(void) const;
+
 };
 
 #endif

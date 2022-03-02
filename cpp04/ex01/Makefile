@@ -12,13 +12,13 @@ INCL = includes
 
 CXX = clang++
 
-CPPFLAGS = -Wall -Werror -Wextra -Wno-unused -std=c++98 
+CPPFLAGS = -Wall -Werror -Wextra -Wno-unused -std=c++98
 
 RM = rm -rf
 
 #FSANITIZE = -ggdb -fsanitize=address
 
-#VALGRIND = -ggdb
+VALGRIND = -ggdb
 
 .cpp.o:
 		${CXX} ${CPPFLAGS} -I${INCL} -c $< -o ${<:.cpp=.o}

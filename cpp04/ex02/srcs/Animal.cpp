@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   AAnimal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 12:07:03 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/01 16:35:57 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/02 15:05:21 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AAnimal.hpp"
+#include "Animal.hpp"
 
-AAnimal::AAnimal( void ) : _type( "default_animal" )  {
+AAnimal::AAnimal( void ) : _type( "default_Aanimal" ) {
 
 	std::cout << "AAnimal default constructor called" << std::endl;
+}
+
+AAnimal::AAnimal( std::string type ) : _type( type ) {
+
+	std::cout << "AAnimal surcharge constructor called" << std::endl;
 }
 
 AAnimal::AAnimal( AAnimal const & src ) {

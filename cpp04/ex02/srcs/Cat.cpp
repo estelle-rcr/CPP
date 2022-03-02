@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 12:14:51 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/01 16:37:07 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/02 15:09:58 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Cat::Cat( void ) : _type( "cat" ) {
 	this->_brain = new Brain();
 }
 
-Cat::Cat( Cat const & src ) {
+Cat::Cat( Cat const & src )  : AAnimal( src ) {
 
 	std::cout << "Cat copy constructor called" << std::endl;
 	*this = src;
@@ -42,11 +42,6 @@ Cat &	Cat::operator=( Cat const & rhs ) {
 void		Cat::makeSound(void) const {
 
 	std::cout << "Meooowwwww" << std::endl;
-}
-
-std::string	Cat::getType( void ) const {
-
-	return this->_type;
 }
 
 std::string	&Cat::getIdea( int nb ) {

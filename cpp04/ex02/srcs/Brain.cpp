@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 14:29:43 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/01 16:08:44 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/02 15:05:27 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Brain::Brain( void ) {
 }
 
 Brain::Brain( Brain const & src ) {
-		
+
 	std::cout << "Brain copy constructor called" << std::endl;
 	*this = src;
 	return ;

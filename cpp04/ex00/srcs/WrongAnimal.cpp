@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 12:07:03 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/01 15:01:47 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/02 13:54:41 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,11 @@
 WrongAnimal::WrongAnimal( void ) : _type( "wrong_animal" ) {
 
 	std::cout << "WrongAnimal default constructor called" << std::endl;
+}
+
+WrongAnimal::WrongAnimal( std::string type ) : _type( type ) {
+
+	std::cout << "Animal surcharge constructor called" << std::endl;
 }
 
 WrongAnimal::WrongAnimal( WrongAnimal const & src ) {

@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 12:04:31 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/01 15:26:55 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/02 13:57:57 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Dog : public Animal {
 
 	private:
 		Brain*		_brain;
-		
+
 	protected:
 		std::string	_type;
 
@@ -31,7 +31,7 @@ class Dog : public Animal {
 		~Dog();
 
 		virtual void makeSound(void) const;
-		virtual std::string	getType( void ) const;
+
 		Dog & operator=( Dog const & rhs );
 };
 

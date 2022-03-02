@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 12:15:44 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/01 16:37:24 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/02 15:09:54 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Dog::Dog( void ) : _type( "dog" ) {
 	this->_brain = new Brain();
 }
 
-Dog::Dog( Dog const & src ) {
+Dog::Dog( Dog const & src ) : AAnimal( src ) {
 
 	std::cout << "Dog copy constructor called" << std::endl;
 	*this = src;
@@ -42,9 +42,4 @@ Dog &	Dog::operator=( Dog const & rhs ) {
 void	Dog::makeSound(void) const {
 
 	std::cout << "Waarrrfff" << std::endl;
-}
-
-std::string	Dog::getType( void ) const {
-
-	return this->_type;
 }

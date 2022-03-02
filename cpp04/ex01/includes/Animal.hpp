@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 12:00:19 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/01 17:44:30 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/02 13:56:34 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ class Animal {
 
 	public:
 		Animal();
+		Animal( std::string _type );
 		Animal( Animal const & src );
 		virtual ~Animal();
 
-		virtual void 		makeSound(void) const;
-		virtual std::string	getType( void ) const;
-
+		virtual void makeSound(void) const;
+		std::string	getType( void ) const;
 		Animal & operator=( Animal const & rhs );
 };
 

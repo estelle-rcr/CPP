@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 12:03:04 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/01 16:36:12 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/02 15:10:39 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define __CAT_HPP__
 
 #include <iostream>
-#include "AAnimal.hpp"
+#include "Animal.hpp"
 #include "Brain.hpp"
 
 class Cat : public AAnimal {
@@ -31,10 +31,9 @@ class Cat : public AAnimal {
 		~Cat();
 
 		virtual void 		makeSound(void) const;
-		virtual std::string	getType( void ) const;
 		std::string			&getIdea( int nb );
 		void				setIdea( int nb, std::string idea );
-		
+
 		Cat & operator=( Cat const & rhs );
 };
 

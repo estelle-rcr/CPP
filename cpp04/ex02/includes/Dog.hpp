@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 12:04:31 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/01 16:36:16 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/02 15:10:44 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 # define __DOG_HPP__
 
 #include <iostream>
-#include "AAnimal.hpp"
+#include "Animal.hpp"
 #include "Brain.hpp"
 
 class Dog : public AAnimal {
 
 	private:
 		Brain*		_brain;
-		
+
 	protected:
 		std::string	_type;
 
@@ -31,7 +31,7 @@ class Dog : public AAnimal {
 		~Dog();
 
 		virtual void makeSound(void) const;
-		virtual std::string	getType( void ) const;
+
 		Dog & operator=( Dog const & rhs );
 };
 

@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 12:00:19 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/01 14:58:04 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/02 13:54:54 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class WrongAnimal {
 
 	public:
 		WrongAnimal();
+		WrongAnimal( std::string _type );
 		WrongAnimal( WrongAnimal const & src );
 		virtual ~WrongAnimal();
 

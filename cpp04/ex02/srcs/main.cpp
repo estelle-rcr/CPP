@@ -6,11 +6,11 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 12:20:27 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/01 16:39:21 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/02 15:11:45 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/AAnimal.hpp"
+#include "../includes/Animal.hpp"
 #include "../includes/Cat.hpp"
 #include "../includes/Dog.hpp"
 
