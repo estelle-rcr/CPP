@@ -7,7 +7,7 @@ OBJS	=${addprefix srcs/,${SRCS:.cpp=.o}}
 
 INCL = includes
 
-CXX = clang++
+CXX = c++
 
 CPPFLAGS = -Wall -Werror -Wextra -Wno-unused -std=c++98 -pedantic
 

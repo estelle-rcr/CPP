@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/01 17:09:05 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/02 16:29:31 by erecuero         ###   ########.fr       */
+/*   Created: 2022/03/02 16:29:33 by erecuero          #+#    #+#             */
+/*   Updated: 2022/03/02 16:33:50 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	__IMATERIASOURCE_HPP__
-# define __IMATERIASOURCE_HPP__
+#ifndef	__MATERIASOURCE_HPP__
+# define __MATERIASOURCE_HPP__
 
 #include <iostream>
 #include "AMateria.hpp"
+#include "IMateriaSource.hpp"
+#define MATERIAMAX	4
 
-class IMateriaSource
-{
+class MateriaSource : public IMateriaSource {
+
+	private:
+		AMateria		*_materia[MATERIAMAX];
+
 	public:
-		virtual ~IMateriaSource() {}
-		virtual void learnMateria(AMateria*) = 0;
-		virtual AMateria* createMateria(std::string const & type) = 0;
+		MateriaSource();
+		MateriaSource( MateriaSource const & other );
+		MateriaSource & operator=( MateriaSource const & rhs );
+		~MateriaSource();
+
+		void learnMateria(AMateria*);
+		AMateria* createMateria(std::string const & type);
 };
 
 #endif

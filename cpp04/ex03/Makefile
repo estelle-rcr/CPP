@@ -1,18 +1,19 @@
-NAME = Animals
+NAME = Game
 
 SRCS =	main.cpp\
-		Animal.cpp\
-		Brain.cpp\
-		Cat.cpp\
-		Dog.cpp
+		AMateria.cpp\
+		Character.cpp\
+		ICharacter.cpp\
+		IMateriaSource.cpp\
+		MateriaSource.cpp
 
 OBJS	=${addprefix srcs/,${SRCS:.cpp=.o}}
 
 INCL = includes
 
-CXX = clang++
+CXX = c++
 
-CPPFLAGS = -Wall -Werror -Wextra -Wno-unused -std=c++98 
+CPPFLAGS = -Wall -Werror -Wextra -Wno-unused -std=c++98
 
 RM = rm -rf
 
