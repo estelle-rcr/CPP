@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 16:18:47 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/02 16:33:24 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/02 17:08:19 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,3 +38,4 @@ class Character : public ICharacter {
 		void use(int idx, ICharacter& target);
 
 };
+#endif
