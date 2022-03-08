@@ -1,55 +1,60 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/02 17:09:00 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/07 18:04:14 by erecuero         ###   ########.fr       */
+/*   Created: 2022/03/07 16:01:07 by erecuero          #+#    #+#             */
+/*   Updated: 2022/03/07 18:44:36 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	__BUREAUCRAT_HPP__
-# define __BUREAUCRAT_HPP__
+#ifndef	__FORM_HPP__
+# define __FORM_HPP__
 
 #include <iostream>
+#include "Bureaucrat.hpp"
 
-
-class Bureaucrat {
+class Form {
 
 		class GradeTooHighException : public std::exception {
 
 			public:
 				virtual const char *what() const throw() {
-					return ("Can't increment, rank is already the highest rank.");
+					return ("Rank is too high.");
 				}
 		};
 		class GradeTooLowException : public std::exception {
 
 			public:
 				virtual const char *what() const throw() {
-					return ("Can't decrement, rank is already the lowest rank.");
+					return ("Rank is too low.");
 				}
 		};
 
 	private:
 		std::string	const	_name;
-		int					_rank;
+		bool				_signed;
+		int const			_signRank;
+		int const			_execRank;
+
 
 	public:
-		Bureaucrat( void );
-		Bureaucrat( std::string name, int starting_rank) throw(Bureaucrat::GradeTooHighException, Bureaucrat::GradeTooLowException);
-		Bureaucrat( Bureaucrat const & src );
-		~Bureaucrat();
-		Bureaucrat & operator=( Bureaucrat const & rhs );
+		Form( void );
+		Form( std::string const name, int const signRank, int const execRank);  // throw(Form::GradeTooHighException, Form::GradeTooLowException)
+		Form( Form const & src );
+		~Form();
+		Form & operator=( Form const & rhs );
 
 		std::string const & getName() const;
-		int 				getRank() const;
-		void				incrementRank() throw(Bureaucrat::GradeTooHighException);
-		void				decrementRank() throw(Bureaucrat::GradeTooLowException);
+		bool 				getSigned() const;
+		int					getSignRank() const;
+		int					getExecRank() const;
+
+		void	beSigned(Bureaucrat const & bureaucrat);
 };
 
-	std::ostream & operator<<(std::ostream &o, Bureaucrat const &rhs);
+	std::ostream & operator<<(std::ostream &o, Form const &rhs);
 
 #endif
