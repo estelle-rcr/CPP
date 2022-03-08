@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 17:09:00 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/07 18:04:14 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/08 12:47:09 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,15 +39,15 @@ class Bureaucrat {
 
 	public:
 		Bureaucrat( void );
-		Bureaucrat( std::string name, int starting_rank) throw(Bureaucrat::GradeTooHighException, Bureaucrat::GradeTooLowException);
+		Bureaucrat( std::string name, int starting_rank);
 		Bureaucrat( Bureaucrat const & src );
 		~Bureaucrat();
 		Bureaucrat & operator=( Bureaucrat const & rhs );
 
 		std::string const & getName() const;
 		int 				getRank() const;
-		void				incrementRank() throw(Bureaucrat::GradeTooHighException);
-		void				decrementRank() throw(Bureaucrat::GradeTooLowException);
+		void				incrementRank();
+		void				decrementRank();
 };
 
 	std::ostream & operator<<(std::ostream &o, Bureaucrat const &rhs);
