@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 16:01:17 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/08 14:32:06 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/08 18:28:04 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,3 +88,16 @@ void	Form::beSigned(Bureaucrat const & bureaucrat) {
 	}
 }
 
+bool	Form::checkConditions(Bureaucrat const & executor) {
+
+	if (this->getExecRank() < executor.getRank()) {
+		throw Form::GradeTooLowException();
+		return 0;
+	}
+	else if (!this->getSigned()) {
+		throw Form::FormNotSignedException();
+		return 0;
+	}
+	else
+		return 1;
+}

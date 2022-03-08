@@ -6,11 +6,11 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 17:22:56 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/08 14:39:05 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/08 18:31:01 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#include "../includes/Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat() : _name("Default"), _rank(150) {
 
@@ -76,4 +76,28 @@ void	Bureaucrat::decrementRank() {
 		throw Bureaucrat::GradeTooLowException();
 	else
 		this->_rank++;
+}
+
+void	Bureaucrat::signForm( Form * form) const {
+
+	try {
+		form->beSigned(*this);
+		if (form->getSigned())
+			std::cout << this->getName() << " signed " << form->getName() << std::endl; 
+	}
+	catch (const std::exception& e) {
+		std::cout << this->getName() << " couldn’t sign " << form->getName() << " because " << e.what() << std::endl;
+	}
+}
+
+void	Bureaucrat::executeForm(Form const & form) {
+
+	try {
+		if (form.execute(*this))
+			std::cout << this->getName() << " executed " << form.getName() << std::endl;
+	}
+	catch (const std::exception& e) {
+		std::cout << this->getName() << " couldn’t execute " << form.getName()
+			<< " because " << e.what() << std::endl;
+	}
 }

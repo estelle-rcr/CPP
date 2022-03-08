@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 17:22:56 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/07 18:47:33 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/08 14:45:24 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ Bureaucrat::Bureaucrat() : _name("Default"), _rank(150) {
 	return ;
 }
 
-Bureaucrat::Bureaucrat(std::string name, int rank) throw(Bureaucrat::GradeTooHighException, Bureaucrat::GradeTooLowException) : _name(name)
+Bureaucrat::Bureaucrat(std::string name, int rank) : _name(name)
 {
 	if (rank < 1)
-		throw Bureaucrat::GradeTooLowException();
-	else if (rank > 150)
 		throw Bureaucrat::GradeTooHighException();
+	else if (rank > 150)
+		throw Bureaucrat::GradeTooLowException();
 	else
 		this->_rank = rank;
 }
@@ -45,9 +45,9 @@ Bureaucrat & Bureaucrat::operator=( Bureaucrat const & rhs ) {
 	return *this;
 }
 
-std::ostream &	operator<<( std::ostream & o, Bureaucrat const & i ) {
+std::ostream &	operator<<( std::ostream & o, Bureaucrat const & rhs ) {
 
-	o << i.getName() << ", bureaucrate grade " << i.getRank();
+	o << rhs.getName() << ", bureaucrate grade " << rhs.getRank();
 	return o;
 }
 
@@ -61,7 +61,7 @@ int 				Bureaucrat::getRank() const {
 	return (this->_rank);
 }
 
-void	Bureaucrat::incrementRank() throw(Bureaucrat::GradeTooHighException) {
+void	Bureaucrat::incrementRank() {
 
 	if ((this->_rank - 1) < 1)
 		throw Bureaucrat::GradeTooHighException();
@@ -69,7 +69,7 @@ void	Bureaucrat::incrementRank() throw(Bureaucrat::GradeTooHighException) {
 		this->_rank--;
 }
 
-void	Bureaucrat::decrementRank() throw(Bureaucrat::GradeTooLowException) {
+void	Bureaucrat::decrementRank() {
 
 
 	if ((this->_rank + 1) > 150)
@@ -80,7 +80,12 @@ void	Bureaucrat::decrementRank() throw(Bureaucrat::GradeTooLowException) {
 
 void	Bureaucrat::signForm( Form * form) const {
 
-//	try {
-		//if (form->)
-//	}
+	try {
+		form->beSigned(*this);
+		if (form->getSigned())
+			std::cout << this->getName() << " signed " << form->getName() << std::endl; 
+	}
+	catch (const std::exception& e) {
+		std::cout << this->getName() << " couldn’t sign " << form->getName() << " because " << e.what() << std::endl;
+	}
 }

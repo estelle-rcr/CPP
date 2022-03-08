@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 17:09:00 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/08 14:46:07 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/08 15:18:12 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ class Bureaucrat {
 					return ("Rank is too low to be decremented.");
 				}
 		};
-	
+
 	private:
 		std::string	const	_name;
 		int					_rank;
@@ -51,6 +51,7 @@ class Bureaucrat {
 		void				incrementRank();
 		void				decrementRank();
 		void				signForm( Form * form ) const;
+		void				executeForm(Form const & form);
 
 };
 

@@ -6,30 +6,25 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 17:46:34 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/08 14:35:45 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/08 18:36:17 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "../includes/Bureaucrat.hpp"
+#include "../includes/Form.hpp"
+#include "../includes/PresidentialPardonForm.hpp"
+#include "../includes/RobotomyRequestForm.hpp"
+#include "../includes/ShrubberyCreationForm.hpp"
 
 int main( void ) {
-
-	std::cout << ">>> Test creation of Form with rank 0 <<<" << std::endl;
-	try {
-		Form	tooHigh("ERC723", 0, 0);
-	}
-	catch(const std::exception& e) {
-		std::cerr << e.what() << std::endl;
-	}
 
 	std::cout << "\n>>> Tests creation of forms and bureaucrats to sign forms <<<" << std::endl;
 	Bureaucrat	bureaucrat1("Brandon", 2);
 	Bureaucrat	bureaucrat2(bureaucrat1);
 	Bureaucrat	bureaucrat3;
-	Form		form1("ERC720", 150, 150);
-	Form		form2("ERC721", 1, 1);
-	Form		form3("ERC722", 1, 150);
+	Form		*form1 = new PresidentialPardonForm("Brandon");
+	Form		*form2 = new RobotomyRequestForm("Brandon");
+	Form		*form3 = new ShrubberyCreationForm("Brandon");
 
 	std::cout << bureaucrat1 << std::endl;
 	std::cout << bureaucrat2 << std::endl;

@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 17:09:58 by erecuero          #+#    #+#             */
-/*   Updated: 2022/02/23 23:24:11 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/08 11:47:00 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,7 +145,7 @@ Fixed	Fixed::operator/( const Fixed &fixed ) {
 
 Fixed&	Fixed::operator++( void ) {
 
-	this->_rawBits++;
+	this->_rawBits += 1;
 	return (*this);
 }
 

@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 17:10:29 by erecuero          #+#    #+#             */
-/*   Updated: 2022/02/23 16:34:42 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/08 11:34:34 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define __FIXED_HPP__
 
 #include <iostream>
+#include <math.h>
+
 
 class Fixed {
 

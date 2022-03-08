@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 17:09:00 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/08 12:47:09 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/08 14:46:00 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,14 @@ class Bureaucrat {
 
 			public:
 				virtual const char *what() const throw() {
-					return ("Can't increment, rank is already the highest rank.");
+					return ("Rank is too high to be incremented.");
 				}
 		};
 		class GradeTooLowException : public std::exception {
 
 			public:
 				virtual const char *what() const throw() {
-					return ("Can't decrement, rank is already the lowest rank.");
+					return ("Rank is too low to be decremented.");
 				}
 		};
 

@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 17:46:34 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/02 18:05:54 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/08 14:39:42 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int main( void ) {
 		bureaucrat1.incrementRank();
 	}
 	catch(const std::exception& e) {
-		std::cerr << e.what() << '\n';
+		std::cout << e.what() << std::endl;;
 	}
 
 	std::cout << bureaucrat1 << std::endl;
@@ -41,7 +41,7 @@ int main( void ) {
 		bureaucrat2.decrementRank();
 	}
 	catch(const std::exception& e) {
-		std::cerr << e.what() << '\n';
+		std::cout << e.what() << std::endl;;
 	}
 
 	std::cout << bureaucrat1 << std::endl;
@@ -52,7 +52,7 @@ int main( void ) {
 		bureaucrat3.decrementRank();
 	}
 	catch(const std::exception& e) {
-		std::cerr << e.what() << '\n';
+		std::cout << e.what() << std::endl;;
 	}
 
 	std::cout << bureaucrat1 << std::endl;
@@ -63,7 +63,7 @@ int main( void ) {
 		Bureaucrat	tooHigh("Cannot be created", 0);
 	}
 	catch(const std::exception& e) {
-		std::cerr << e.what() << '\n';
+		std::cout << ">>> test creation:\n" << e.what() << std::endl;
 	}
 
 	return (0);
