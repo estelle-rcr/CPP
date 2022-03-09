@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 17:46:34 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/08 18:36:17 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/09 11:05:24 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int main( void ) {
 	std::cout << form3 << std::endl;
 	std::cout << "\n>>> Test 1 <<<" << std::endl;
 	try {
-		bureaucrat1.signForm(&form2);
+		bureaucrat1.signForm(form2);
 	}
 	catch(const std::exception& e) {
 		std::cerr << e.what() << std::endl;;
@@ -49,7 +49,7 @@ int main( void ) {
 
 	std::cout << "\n>>> Test 2 <<<" << std::endl;
 	try {
-		bureaucrat2.signForm(&form3);
+		bureaucrat2.signForm(form3);
 	}
 	catch(const std::exception& e) {
 		std::cerr << e.what() << std::endl;;
@@ -64,7 +64,7 @@ int main( void ) {
 
 	std::cout << "\n>>> Test 3 <<<" << std::endl;
 	try {
-		bureaucrat3.signForm(&form1);
+		bureaucrat3.signForm(form1);
 	}
 	catch(const std::exception& e) {
 		std::cerr << e.what() << std::endl;;

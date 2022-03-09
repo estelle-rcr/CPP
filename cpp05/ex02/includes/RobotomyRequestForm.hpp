@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 15:04:05 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/08 18:29:34 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/09 11:14:28 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class RobotomyRequestForm : public Form {
 		RobotomyRequestForm & operator=( RobotomyRequestForm const & rhs );
 
 		std::string	getTarget( void ) const;
-		virtual bool		execute(Bureaucrat const & executor);
+		virtual bool		execute(Bureaucrat const & executor) const;
 };
 
 #endif

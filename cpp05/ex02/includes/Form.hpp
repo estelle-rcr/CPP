@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 16:01:07 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/08 18:26:44 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/09 11:14:20 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ class Form {
 
 		void			beSigned(Bureaucrat const & bureaucrat);
 		bool			checkConditions(Bureaucrat const & executor);
-		virtual bool	execute(Bureaucrat const & executor) = 0;
+		virtual bool	execute(Bureaucrat const & executor) const = 0;
 };
 
 	std::ostream & operator<<(std::ostream &o, Form const &rhs);

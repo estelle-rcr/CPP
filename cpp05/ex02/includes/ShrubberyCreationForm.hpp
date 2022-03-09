@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 15:04:08 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/08 18:29:39 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/09 11:14:33 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class ShrubberyCreationForm : public Form {
 		ShrubberyCreationForm & operator=( ShrubberyCreationForm const & rhs );
 
 		std::string	getTarget( void ) const;
-		virtual bool		execute(Bureaucrat const & executor);
+		virtual bool		execute(Bureaucrat const & executor) const;
 };
 
 #endif

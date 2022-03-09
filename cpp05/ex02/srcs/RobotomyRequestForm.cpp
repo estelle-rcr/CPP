@@ -6,13 +6,13 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 15:04:14 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/08 18:17:24 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/09 11:10:34 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm( std::string target ) : 
+RobotomyRequestForm::RobotomyRequestForm( std::string target ) :
 	Form("Presidential Pardon", 72, 45), _target(target) {
 
 	return ;
@@ -48,9 +48,13 @@ bool	RobotomyRequestForm::execute(Bureaucrat const & executor) {
 	if (this->checkConditions(executor))
 	{
 		std::cout << "TRIIIIIIT " << std::endl;
-		if (rand() % 2)
+		if (rand() % 2) {
 			std::cout << this->getTarget() << " was robotomized correctly." << std::endl;
-		else
+			return true;
+		}
+		else {
 			std::cout << " robotomization failed on " << this->getTarget() << std::endl;
+			return false;
+		}
 	}
 }

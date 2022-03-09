@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 17:22:56 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/08 18:31:01 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/09 11:12:12 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void	Bureaucrat::signForm( Form * form) const {
 	try {
 		form->beSigned(*this);
 		if (form->getSigned())
-			std::cout << this->getName() << " signed " << form->getName() << std::endl; 
+			std::cout << this->getName() << " signed " << form->getName() << std::endl;
 	}
 	catch (const std::exception& e) {
 		std::cout << this->getName() << " couldn’t sign " << form->getName() << " because " << e.what() << std::endl;
@@ -93,7 +93,7 @@ void	Bureaucrat::signForm( Form * form) const {
 void	Bureaucrat::executeForm(Form const & form) {
 
 	try {
-		if (form.execute(*this))
+		if (form.execute(*this) == true)
 			std::cout << this->getName() << " executed " << form.getName() << std::endl;
 	}
 	catch (const std::exception& e) {

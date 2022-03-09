@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 16:01:17 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/08 18:28:04 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/09 11:13:28 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ Form &	Form::operator=( Form const & rhs ) {
 }
 
 std::ostream & operator<<(std::ostream &o, Form const &rhs) {
-	
+
 	o << "Form " << rhs.getName() << " is ";
 	if (rhs.getSigned())
 		o << "already signed. ";
@@ -79,7 +79,7 @@ int					Form::getExecRank() const {
 }
 
 void	Form::beSigned(Bureaucrat const & bureaucrat) {
-	
+
 	if (bureaucrat.getRank() > this->_signRank) {
 		throw Form::GradeTooLowException();
 	}
