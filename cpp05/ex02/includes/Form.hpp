@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 16:01:07 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/09 11:14:20 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/10 00:03:14 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define __FORM_HPP__
 
 #include <iostream>
+#include <string>
 #include "Bureaucrat.hpp"
 
 class Bureaucrat;
@@ -62,7 +63,7 @@ class Form {
 		int					getExecRank() const;
 
 		void			beSigned(Bureaucrat const & bureaucrat);
-		bool			checkConditions(Bureaucrat const & executor);
+		bool			checkConditions(Bureaucrat const & executor) const;
 		virtual bool	execute(Bureaucrat const & executor) const = 0;
 };
 

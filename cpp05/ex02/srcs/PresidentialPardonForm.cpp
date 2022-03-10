@@ -12,7 +12,7 @@
 
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm( std::string target ) : 
+PresidentialPardonForm::PresidentialPardonForm( std::string target ) :
 	Form("Presidential Pardon", 25, 5), _target(target) {
 
 	return ;
@@ -43,8 +43,11 @@ std::string	PresidentialPardonForm::getTarget( void ) const {
 	return this->_target;
 }
 
-bool	PresidentialPardonForm::execute(Bureaucrat const & executor) {
+bool	PresidentialPardonForm::execute(Bureaucrat const & executor) const {
 
-	if (this->checkConditions(executor))
-			std::cout << "Zaphod Beeblebrox forgives " << this->getTarget() << std::endl;
+	if (this->checkConditions(executor)) {
+		std::cout << "Zaphod Beeblebrox forgives " << this->getTarget() << std::endl;
+		return true;
+	}
+	return false;
 }

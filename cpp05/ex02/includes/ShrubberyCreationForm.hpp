@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 15:04:08 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/09 11:14:33 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/10 00:03:18 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
+#include <fstream>
 
 class Bureaucrat;
 

@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 17:46:34 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/09 11:05:24 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/10 00:55:53 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,16 @@ int main( void ) {
 	Bureaucrat	bureaucrat1("Brandon", 2);
 	Bureaucrat	bureaucrat2(bureaucrat1);
 	Bureaucrat	bureaucrat3;
-	Form		*form1 = new PresidentialPardonForm("Brandon");
-	Form		*form2 = new RobotomyRequestForm("Brandon");
-	Form		*form3 = new ShrubberyCreationForm("Brandon");
+	Form		*form1 = new PresidentialPardonForm("Brandy");
+	Form		*form2 = new RobotomyRequestForm("Brandy");
+	Form		*form3 = new ShrubberyCreationForm("Brandy");
 
 	std::cout << bureaucrat1 << std::endl;
 	std::cout << bureaucrat2 << std::endl;
 	std::cout << bureaucrat3 << std::endl;
-	std::cout << form1 << std::endl;
-	std::cout << form2 << std::endl;
-	std::cout << form3 << std::endl;
+	std::cout << *form1 << std::endl;
+	std::cout << *form2 << std::endl;
+	std::cout << *form3 << std::endl;
 	std::cout << "\n>>> Test 1 <<<" << std::endl;
 	try {
 		bureaucrat1.signForm(form2);
@@ -43,9 +43,9 @@ int main( void ) {
 	std::cout << bureaucrat1 << std::endl;
 	std::cout << bureaucrat2 << std::endl;
 	std::cout << bureaucrat3 << std::endl;
-	std::cout << form1 << std::endl;
-	std::cout << form2 << std::endl;
-	std::cout << form3 << std::endl;
+	std::cout << *form1 << std::endl;
+	std::cout << *form2 << std::endl;
+	std::cout << *form3 << std::endl;
 
 	std::cout << "\n>>> Test 2 <<<" << std::endl;
 	try {
@@ -58,9 +58,9 @@ int main( void ) {
 	std::cout << bureaucrat1 << std::endl;
 	std::cout << bureaucrat2 << std::endl;
 	std::cout << bureaucrat3 << std::endl;
-	std::cout << form1 << std::endl;
-	std::cout << form2 << std::endl;
-	std::cout << form3 << std::endl;
+	std::cout << *form1 << std::endl;
+	std::cout << *form2 << std::endl;
+	std::cout << *form3 << std::endl;
 
 	std::cout << "\n>>> Test 3 <<<" << std::endl;
 	try {
@@ -73,10 +73,31 @@ int main( void ) {
 	std::cout << bureaucrat1 << std::endl;
 	std::cout << bureaucrat2 << std::endl;
 	std::cout << bureaucrat3 << std::endl;
-	std::cout << form1 << std::endl;
-	std::cout << form2 << std::endl;
-	std::cout << form3 << std::endl;
+	std::cout << *form1 << std::endl;
+	std::cout << *form2 << std::endl;
+	std::cout << *form3 << std::endl;
 
+	try {
+		bureaucrat2.executeForm(*form1);
+	}
+	catch(const std::exception& e) {
+		std::cerr << e.what() << std::endl;;
+	}
+
+	try {
+		bureaucrat1.executeForm(*form3);
+		bureaucrat2.executeForm(*form2);
+	}
+	catch(const std::exception& e) {
+		std::cerr << e.what() << std::endl;;
+	}
+
+	try {
+		bureaucrat3.executeForm(*form3);
+	}
+	catch(const std::exception& e) {
+		std::cerr << e.what() << std::endl;;
+	}
 
 	return (0);
 }
