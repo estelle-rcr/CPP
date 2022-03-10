@@ -20,7 +20,7 @@ PresidentialPardonForm::PresidentialPardonForm( std::string target ) :
 
 PresidentialPardonForm::PresidentialPardonForm( PresidentialPardonForm const & src ) :
 	Form(src), _target(src._target) {
-//	*this = src;
+	*this = src;
 	return ;
 }
 

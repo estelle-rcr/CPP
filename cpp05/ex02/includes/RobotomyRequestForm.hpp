@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 15:04:05 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/09 11:14:28 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/10 16:05:11 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include <iostream>
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
+#include <stdlib.h>     /* srand, rand */
+#include <time.h>       /* time */
 
 class Bureaucrat;
 

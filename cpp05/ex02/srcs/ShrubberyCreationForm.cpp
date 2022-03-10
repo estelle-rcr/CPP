@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 15:04:16 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/10 00:54:59 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/10 18:24:36 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ ShrubberyCreationForm::ShrubberyCreationForm( std::string target ) :
 
 ShrubberyCreationForm::ShrubberyCreationForm( ShrubberyCreationForm const & src ) :
 	Form(src), _target(src._target) {
-//	*this = src;
+	*this = src;
 	return ;
 }
 
@@ -48,7 +48,7 @@ bool	ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
 	if (this->checkConditions(executor))
 	{
 		std::string fileName = this->getTarget() + "_shrubbery";
-		std::ofstream	file(fileName, std::ofstream::out);
+		std::ofstream	file(fileName.c_str(), std::ofstream::out);
 		if (file.is_open())
 		{
 			file << "       _-_       " << std::endl

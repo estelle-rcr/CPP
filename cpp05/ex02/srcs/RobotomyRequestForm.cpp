@@ -6,12 +6,11 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 15:04:14 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/10 01:02:09 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/10 18:24:32 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
-#include <cstdlib>
 
 RobotomyRequestForm::RobotomyRequestForm( std::string target ) :
 	Form("Robotomy Request", 72, 45), _target(target) {
@@ -21,7 +20,7 @@ RobotomyRequestForm::RobotomyRequestForm( std::string target ) :
 
 RobotomyRequestForm::RobotomyRequestForm( RobotomyRequestForm const & src ) :
 	Form(src), _target(src._target) {
-//	*this = src;
+	*this = src;
 	return ;
 }
 
@@ -48,13 +47,14 @@ bool	RobotomyRequestForm::execute(Bureaucrat const & executor) const {
 
 	if (this->checkConditions(executor))
 	{
+		srand (time(NULL));
 		std::cout << "TRIIIIIIT " << std::endl;
-		if ((std::rand() % 2) == 1) {
+		if ((std::rand() % 2 + 1) == 1) {
 			std::cout << this->getTarget() << " was robotomized correctly." << std::endl;
 			return true;
 		}
 		else {
-			std::cout << " robotomization failed on " << this->getTarget() << std::endl;
+			std::cout << "Robotomization failed on " << this->getTarget() << std::endl;
 			return false;
 		}
 	}
