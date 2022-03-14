@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 16:13:15 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/10 17:11:02 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/11 18:28:36 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ Form	*Intern::makeForm( std::string const formName, std::string const target ) {
 		new RobotomyRequestForm(target),
 		new ShrubberyCreationForm(target)
 	};
+
 	std::string	s[3] = { "presidential pardon", "robotomy request", "shrubbery creation" };
 	
 	formPointer = 0;
