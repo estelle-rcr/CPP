@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 09:29:23 by erecuero          #+#    #+#             */
-/*   Updated: 2022/02/25 16:41:27 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/15 15:27:21 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 class ScavTrap : public ClapTrap
 {
 	public:
-
 		ScavTrap( void );
 		ScavTrap( std::string name);
 		ScavTrap( ScavTrap const & src );

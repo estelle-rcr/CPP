@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 17:16:11 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/11 19:32:22 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/15 16:54:06 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,19 @@ bool	isNegativeInt( std::string source ) {
 
 bool	isFloat( std::string source) {
 
+	int size = source.length();
+
 	if (source.find("f") != 1)
 		return false;
-	else if (source.find)
-
+	else if (source.find(".") != 1)
+		return false;
+	else {
+		for (int i = 0; i < size; i++) {
+			if (isalpha(source[i]) && source[i] != 'f' && source[i] != '.')
+				return false;
+		}
+	}
+	return true;
 }
 
 bool	isDouble( std::string source) {

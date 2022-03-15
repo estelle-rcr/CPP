@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 16:38:35 by erecuero          #+#    #+#             */
-/*   Updated: 2022/02/28 10:18:29 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/15 15:28:09 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 class FragTrap : virtual public ClapTrap
 {
 	public:
-
 		FragTrap( void );
 		FragTrap( std::string name);
 		FragTrap( FragTrap const & src );

@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 16:42:24 by erecuero          #+#    #+#             */
-/*   Updated: 2022/02/25 16:50:35 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/15 15:25:35 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ FragTrap::FragTrap() : ClapTrap() {
 }
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name) {
-	std::cout << "FragTrap name constructor called" << std::endl;
+	std::cout << "FragTrap surcharge constructor called" << std::endl;
 	this->_hitPoints = 100;
 	this->_energyPoints = 100;
 	this->_attackDamage = 30;
