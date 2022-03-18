@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 12:07:03 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/02 13:50:41 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/17 16:56:00 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ Animal &	Animal::operator=( Animal const & rhs ) {
 
 void		Animal::makeSound(void) const {
 
-	std::cout << "?&%!!/;?" << std::endl;
+	std::cout << "%" << std::endl;
 }
 
 std::string	Animal::getType( void ) const {

@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 12:14:51 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/02 15:09:58 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/18 17:56:41 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ Cat::~Cat() {
 Cat &	Cat::operator=( Cat const & rhs ) {
 
 	AAnimal::operator=(rhs);
+	if (this->_brain)
+		delete this->_brain;
 	this->_brain = new Brain(*rhs._brain);
 	return (*this);
 }

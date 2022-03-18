@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 14:30:03 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/01 16:08:48 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/17 17:37:17 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Brain {
 	public:
 		Brain();
 		Brain( Brain const & src );
-		virtual ~Brain();
+		~Brain();
 		
 		Brain & operator=( Brain const & rhs );
 		std::string			&getIdea( int nb );

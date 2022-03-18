@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 12:20:27 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/02 15:07:05 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/17 17:34:35 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,5 +65,6 @@ int main ( void ) {
 		std::cout << std::endl;
 		std::cout << std::endl;
 	}
+	std::cout << "\ncat 1 : " << cat1.getIdea(1) << std::endl << std::endl;
 	return 0;
 }

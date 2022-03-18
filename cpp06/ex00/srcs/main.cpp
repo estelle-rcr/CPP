@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 17:16:11 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/15 16:54:06 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/16 14:01:14 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,14 +59,14 @@ bool	isDouble( std::string source) {
 int	checkSource(std::string source) {
 	
 	int size = source.length();
-	if (size == 1 && isascii(source[0]))
+	if (isNumeric(source) || isNegativeInt(source)) 
+		return 1;
+	else if (size == 1 && isascii(source[0]))
 		return 0;
 	else if (source.compare("-inff") || source.compare("+inff") || source.compare("nanf"))
 		return 2;
 	else if (source.compare("-inf") || source.compare("+inf") || source.compare("nan"))
 		return 3;
-	else if (isNumeric(source) || isNegativeInt(source)) 
-		return 1;
 	else if (isFloat(source))
 		return 2;
 	else if (isDouble(source))
