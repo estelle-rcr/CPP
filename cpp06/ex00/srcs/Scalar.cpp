@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 17:08:04 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/23 15:13:17 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/23 15:53:23 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 Scalar::Scalar( char *entry ) {
 
-	if (std::isprint(entry[0]) && !entry[1] && !std::isdigit(entry[0]))
+	if (checkChar(entry) == false && checkInt(entry) == false && checkFloat(entry) == false && checkDouble(entry) == false)
+		throw Scalar::WrongFormat();
+	else if (std::isprint(entry[0]) && !entry[1] && !std::isdigit(entry[0]))
 		this->_entry = static_cast<double>(entry[0]);
 	else
 		this->_entry = atof(entry);
@@ -83,7 +85,7 @@ void	Scalar::printFloat(std::ostream &o) const {
 		o << this->getFloat() << "f" << std::endl;
 	else if (this->getSource().find('.') != std::string::npos) {
 		int pos = this->getSource().find('.') + 1;
-		if (this->getSource()[pos] == '0') {
+		if (this->getSource()[pos] == '0' && !this->getSource()[pos + 1]) {
 			o << this->getFloat() << ".0f" << std::endl;
 		}
 		else
@@ -100,7 +102,7 @@ void	Scalar::printDouble(std::ostream &o) const {
 		o << this->getDouble() << std::endl;
 	else if (this->getSource().find('.') != std::string::npos) {
 		int pos = this->getSource().find('.') + 1;
-		if (this->getSource()[pos] == '0') {
+		if (this->getSource()[pos] == '0' && !this->getSource()[pos + 1]) {
 			o << this->getDouble() << ".0" << std::endl;
 		}
 		else
@@ -154,4 +156,60 @@ void	Scalar::setDouble(double entry) {
 
 void	Scalar::setSource(char *entry) {
 	this->_source = entry;
+}
+
+
+// CHECKERS
+
+bool	Scalar::checkChar(char *entry) {
+
+	char c = entry[0];
+	if (entry[1] != '\0' || std::isprint(c) == false)
+		return false;
+	return true;
+}
+
+bool	isNumeric( std::string source ) {
+
+	int size = source.length();
+
+	for (int i = 0; i < size; i++) {
+		if (isdigit(source[i]) == false)
+			return false;
+	}
+	return true;
+}
+
+bool	Scalar::checkInt(char *entry) {
+
+	char *end_ptr = NULL;
+	std::string tmp = entry;
+	long int i = strtol(entry, &end_ptr, 10);
+	(void)i;
+
+	if (*end_ptr != '\0')
+		return false;
+	else if (!isNumeric(tmp))
+		return false;
+	return true;
+}
+
+bool	Scalar::checkFloat(char *entry) {
+	char *end_ptr = NULL;
+	float f = strtof(entry, &end_ptr);
+	(void)f;
+
+	if (*end_ptr != 'f' || *(end_ptr + 1) != '\0' || end_ptr - entry <= 0)
+		return false;
+	return true;
+}
+
+bool	Scalar::checkDouble(char *entry) {
+	char *end_ptr = NULL;
+	double d = strtod(entry, &end_ptr);
+	(void)d;
+
+	if (*end_ptr != '\0')
+		return false;
+	return true;
 }

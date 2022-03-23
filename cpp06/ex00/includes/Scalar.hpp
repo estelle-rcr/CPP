@@ -6,12 +6,12 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 18:40:05 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/23 14:56:01 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/23 15:47:30 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	__SCALARCONVERSION_HPP__
-# define __SCALARCONVERSION_HPP__
+#ifndef	__SCALAR_HPP__
+# define __SCALAR_HPP__
 
 #include <iostream>
 #include <string>
@@ -24,6 +24,14 @@
 #include <iomanip>
 
 class Scalar {
+
+	class WrongFormat : public std::exception {
+
+		public:
+			virtual const char *what() const throw() {
+				return ("This entry doesn't match any known type.");
+			}
+	};
 
 	private :
 
@@ -56,6 +64,11 @@ class Scalar {
 		void 	printInt(std::ostream &o) const;
 		void 	printFloat(std::ostream &o) const;
 		void 	printDouble(std::ostream &o) const;
+
+		bool	checkChar(char *entry);
+		bool	checkInt(char *entry);
+		bool	checkFloat(char *entry);
+		bool	checkDouble(char *entry);
 
 };
 
