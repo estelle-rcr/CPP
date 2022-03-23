@@ -10,7 +10,7 @@ INCL = includes
 
 CXX = c++
 
-CPPFLAGS = -Wall -Werror -Wextra -Wno-unused -std=c++98
+CPPFLAGS = -Wall -Werror -Wextra -std=c++98
 
 RM = rm -rf
 

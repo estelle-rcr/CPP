@@ -1,12 +1,7 @@
-NAME = Bureaucrat
+NAME = base
 
 SRCS =	main.cpp\
-		Bureaucrat.cpp\
-		Form.cpp\
-		PresidentialPardonForm.cpp\
-		RobotomyRequestForm.cpp\
-		ShrubberyCreationForm.cpp\
-		Intern.cpp
+		Base.cpp\
 
 
 OBJS	=${addprefix srcs/,${SRCS:.cpp=.o}}
@@ -15,7 +10,7 @@ INCL = includes
 
 CXX = c++
 
-CPPFLAGS = -Wall -Werror -Wextra -std=c++98
+CPPFLAGS = -Wall -Werror -Wextra -std=c++98 -pedantic
 
 RM = rm -rf
 
