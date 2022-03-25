@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 17:46:34 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/08 14:39:42 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/25 18:14:31 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,10 @@ int main( void ) {
 	Bureaucrat	bureaucrat2(bureaucrat1);
 	Bureaucrat	bureaucrat3;
 
+	std::cout << ">>> BEFORE <<<" << std::endl;
 	std::cout << bureaucrat1 << std::endl;
 	std::cout << bureaucrat2 << std::endl;
-	std::cout << bureaucrat3 << std::endl;
+	std::cout << bureaucrat3 << std::endl << std::endl;
 
 	try {
 		bureaucrat1.incrementRank();
@@ -33,9 +34,10 @@ int main( void ) {
 		std::cout << e.what() << std::endl;;
 	}
 
+	std::cout << "\n>>> AFTER 1st TRY (increment) <<<" << std::endl;
 	std::cout << bureaucrat1 << std::endl;
 	std::cout << bureaucrat2 << std::endl;
-	std::cout << bureaucrat3 << std::endl;
+	std::cout << bureaucrat3 << std::endl << std::endl;
 
 	try {
 		bureaucrat2.decrementRank();
@@ -44,9 +46,10 @@ int main( void ) {
 		std::cout << e.what() << std::endl;;
 	}
 
+	std::cout << "\n>>> AFTER 2nd TRY (decrement) <<<" << std::endl;
 	std::cout << bureaucrat1 << std::endl;
 	std::cout << bureaucrat2 << std::endl;
-	std::cout << bureaucrat3 << std::endl;
+	std::cout << bureaucrat3 << std::endl << std::endl;
 
 	try {
 		bureaucrat3.decrementRank();
@@ -55,16 +58,18 @@ int main( void ) {
 		std::cout << e.what() << std::endl;;
 	}
 
+	std::cout << "\n>>> AFTER 3rd TRY (decrement) <<<" << std::endl;
 	std::cout << bureaucrat1 << std::endl;
 	std::cout << bureaucrat2 << std::endl;
-	std::cout << bureaucrat3 << std::endl;
+	std::cout << bureaucrat3 << std::endl << std::endl;
 
 	try {
 		Bureaucrat	tooHigh("Cannot be created", 0);
 	}
 	catch(const std::exception& e) {
-		std::cout << ">>> test creation:\n" << e.what() << std::endl;
+		std::cout << ">>> failed creation - return error:\n" << e.what() << std::endl;
 	}
+	std::cout << "\n>>> AFTER 4th TRY (failed creation) <<<" << std::endl;
 
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 17:46:34 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/10 17:11:50 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/25 18:23:48 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int main( void ) {
 	Form *formP2;
 	Form *formP3;
 
-	std::cout << "\n>>> Test 1 <<<" << std::endl;
+	std::cout << ">>> Test 1 <<<" << std::endl;
 	try {
 		formP1 = intern2.makeForm("robotomy request", "Bender");
 		std::cout << *formP1 << std::endl;

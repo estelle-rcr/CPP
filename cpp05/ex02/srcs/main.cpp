@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 17:46:34 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/10 16:50:25 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/25 18:22:03 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 int main( void ) {
 
-	std::cout << "\n>>> Tests creation of forms and bureaucrats to sign forms <<<" << std::endl;
+	std::cout << ">>> Tests creation of forms and bureaucrats to sign forms <<<" << std::endl;
 	Bureaucrat	bureaucrat1("Brandon", 2);
 	Bureaucrat	bureaucrat2(bureaucrat1);
 	Bureaucrat	bureaucrat3;
