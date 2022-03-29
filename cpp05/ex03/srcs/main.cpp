@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 17:46:34 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/25 18:23:48 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/29 14:16:00 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,12 @@ int main( void ) {
 		formP1 = intern2.makeForm("robotomy request", "Bender");
 		std::cout << *formP1 << std::endl;
 		delete formP1;
+	}
+	catch(const std::exception& e) {
+		std::cout << e.what() << std::endl;;
+	}
+	std::cout << "\n>>> Test 2 <<<" << std::endl;
+	try {
 		formP2 = intern2.makeForm("shrubbery creation", "Bender");
 		std::cout << *formP2 << std::endl;
 		delete formP2;
@@ -37,10 +43,11 @@ int main( void ) {
 	catch(const std::exception& e) {
 		std::cout << e.what() << std::endl;;
 	}
-	std::cout << "\n>>> Test 2 <<<" << std::endl;
+	std::cout << "\n>>> Test 3 <<<" << std::endl;
 	try {
 		formP3 = intern2.makeForm("robotomylababa", "Bender");
 		std::cout << *formP3 << std::endl;
+		delete formP3;
 	}
 	catch(const std::exception& e) {
 		std::cout << e.what() << std::endl;;

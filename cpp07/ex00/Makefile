@@ -1,16 +1,21 @@
-NAME = Operations
+NAME = Bureaucrat
 
 SRCS =	main.cpp\
+		Bureaucrat.cpp\
+		Form.cpp\
+		PresidentialPardonForm.cpp\
+		RobotomyRequestForm.cpp\
+		ShrubberyCreationForm.cpp\
+		Intern.cpp
+
 
 OBJS	=${addprefix srcs/,${SRCS:.cpp=.o}}
-
-include $(@:%.o=%.d)
 
 INCL = includes
 
 CXX = c++
 
-CPPFLAGS = -Wall -Werror -Wextra -std=c++98 -MD
+CPPFLAGS = -Wall -Werror -Wextra -std=c++98
 
 RM = rm -rf
 

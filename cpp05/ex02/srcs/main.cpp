@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 17:46:34 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/25 18:22:03 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/29 14:18:43 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,8 @@ int main( void ) {
 	catch(const std::exception& e) {
 		std::cout << e.what() << std::endl;;
 	}
-
+	delete form1;
+	delete form2;
+	delete form3;
 	return (0);
 }
