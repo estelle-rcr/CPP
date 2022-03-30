@@ -1,7 +1,6 @@
-NAME = Comparisons
+NAME = ArrayClass
 
 SRCS =	main.cpp\
-
 
 OBJS	=${addprefix srcs/,${SRCS:.cpp=.o}}
 

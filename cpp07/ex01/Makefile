@@ -1,4 +1,4 @@
-NAME = Comparisons
+NAME = ArrayManip
 
 SRCS =	main.cpp\
 
