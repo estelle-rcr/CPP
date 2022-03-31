@@ -1,4 +1,4 @@
-NAME = ArrayClass
+NAME = Array
 
 SRCS =	main.cpp\
 

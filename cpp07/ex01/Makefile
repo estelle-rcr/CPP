@@ -1,4 +1,4 @@
-NAME = ArrayManip
+NAME = Iter
 
 SRCS =	main.cpp\
 
