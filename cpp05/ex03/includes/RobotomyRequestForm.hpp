@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 15:04:05 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/10 16:05:11 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/31 17:28:11 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ class RobotomyRequestForm : public Form {
 		std::string	_target;
 
 	public:
-		RobotomyRequestForm( void );
 		RobotomyRequestForm( std::string target );
 		RobotomyRequestForm( RobotomyRequestForm const & src );
 		~RobotomyRequestForm();

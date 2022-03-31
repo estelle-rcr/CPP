@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 15:04:08 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/10 00:03:18 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/31 17:28:04 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ class ShrubberyCreationForm : public Form {
 		std::string	_target;
 
 	public:
-		ShrubberyCreationForm( void );
 		ShrubberyCreationForm( std::string target );
 		ShrubberyCreationForm( ShrubberyCreationForm const & src );
 		~ShrubberyCreationForm();

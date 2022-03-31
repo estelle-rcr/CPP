@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   Easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 15:53:13 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/30 18:05:16 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/03/31 15:43:03 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef __EASYFIND_HPP__
 # define __EASYFIND_HPP__
 
-#include <iostream>
+# include <iostream>
 # include <algorithm>
 # include <stdlib.h>
 
