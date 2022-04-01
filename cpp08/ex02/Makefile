@@ -1,7 +1,6 @@
 NAME = MutantStack
 
 SRCS =	main.cpp\
-		MutantStack.cpp
 
 OBJS	=${addprefix srcs/,${SRCS:.cpp=.o}}
 
