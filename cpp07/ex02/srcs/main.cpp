@@ -6,11 +6,13 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 15:53:17 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/30 16:39:45 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/04/07 16:50:52 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "Array.hpp"
+# include <stdlib.h>     /* srand, rand */
+# include <time.h>       /* time */
 
 int main(void)
 {
@@ -50,25 +52,7 @@ int main(void)
 		}
 	}
 
-	{
-		std::cout << "\n>>> TEST ON USING NEW WITH INT ARRAY: <<<" << std::endl;
-		try {
-			int size = 8;
-			std::cout << ">> Create an int array with random integers: " << std::endl;
-			int * intArray2 = new int(size);
-			std::cout << "intArray2: ";
-			for (int i = 0; i < size; i++) {
-				intArray2[i] = rand();
-				std::cout << intArray2[i] << " - ";
-			}
-			std::cout << std::endl;
-			delete intArray2;
-			std::cout << "\n---OK---" << std::endl;
-		}
-		catch(const std::exception& e) {
-			std::cerr << "\n---KO---" << e.what() << '\n';
-		}
-	}
+	
 	{
 		std::cout << "\n>>> TEST ON USING COPY CONSTRUCTOR WITH INT ARRAY: <<<" << std::endl;
 		try {
@@ -101,7 +85,7 @@ int main(void)
 			Array<char> intArray1(size);
 			std::cout << "intArray1: ";
 			for (int i = 0; i < size; i++) {
-				intArray1[i] = 'A' + (random() % 26);
+				intArray1[i] = 'A' + (rand() % 26);
 				std::cout << intArray1[i] << " - ";
 			}
 			std::cout << std::endl << std::endl;
@@ -119,12 +103,26 @@ int main(void)
 		}
 	}
 	{
+		std::cout << "\n>>> TEST ON WITHIN RANGE INPUT: <<<" << std::endl;
+		try {
+			int size = 8;
+			std::cout << ">> Create an int array of size 8 and select last position" << std::endl;
+			Array<int> intArray2(size);
+			std::cout << intArray2[7] << std::endl;
+			std::cout << std::endl;
+			std::cout << "\n---OK---" << std::endl;
+		}
+		catch(const std::exception& e) {
+			std::cerr << "\n---KO---" << e.what() << '\n';
+		}
+	}
+	{
 		std::cout << "\n>>> TEST ON OUT OF RANGE INPUT: <<<" << std::endl;
 		try {
 			int size = 8;
-			std::cout << ">> Create an int array of size 8 and select position 9" << std::endl;
+			std::cout << ">> Create an int array of size 8 and select position 8 (should be wrong)" << std::endl;
 			Array<int> intArray2(size);
-			intArray2[9];
+			std::cout << intArray2[8] << std::endl;
 			std::cout << std::endl;
 			std::cout << "\n---OK---" << std::endl;
 		}

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Easyfind.hpp                                       :+:      :+:    :+:   */
+/*   EasyFind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 15:53:13 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/31 15:43:03 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/04/07 17:01:28 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <iostream>
 # include <algorithm>
 # include <stdlib.h>
+# include <vector>
+# include <list>
 
 class NotFoundException : public std::exception
 {

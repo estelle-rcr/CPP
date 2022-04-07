@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 20:05:48 by erecuero          #+#    #+#             */
-/*   Updated: 2022/04/04 15:25:59 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/04/07 17:12:33 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,18 +78,6 @@ int main(void) {
 			std::cout << mystack.top() << '\n';
 			mystack.pop();
 		}
-	}
-	{
-		std::cout << ">>> ADDITIONNAL TESTS (SWAP): <<<" << std::endl;
-		std::stack<int> foo,bar;
-		foo.push (10); foo.push(20); foo.push(30);
-		bar.push (111); bar.push(222);
-
-		foo.swap(bar);
-
-		std::cout << "size of foo: " << foo.size() << '\n';
-		std::cout << "size of bar: " << bar.size() << '\n';
-
 	}
 	{
 		std::cout << ">>> ADDITIONNAL TESTS (REVERSED ITERATORS): <<<" << std::endl;

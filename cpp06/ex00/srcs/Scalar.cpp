@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 17:08:04 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/23 15:53:23 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/04/07 15:58:46 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -196,10 +196,10 @@ bool	Scalar::checkInt(char *entry) {
 
 bool	Scalar::checkFloat(char *entry) {
 	char *end_ptr = NULL;
-	float f = strtof(entry, &end_ptr);
+	float f = strtod(entry, &end_ptr);
 	(void)f;
-
-	if (*end_ptr != 'f' || *(end_ptr + 1) != '\0' || end_ptr - entry <= 0)
+	
+	if (*end_ptr != 'f' || end_ptr - entry <= 0)
 		return false;
 	return true;
 }
@@ -209,7 +209,7 @@ bool	Scalar::checkDouble(char *entry) {
 	double d = strtod(entry, &end_ptr);
 	(void)d;
 
-	if (*end_ptr != '\0')
+	if (*end_ptr != '\0' || end_ptr - entry <= 0)
 		return false;
 	return true;
 }

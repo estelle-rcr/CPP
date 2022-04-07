@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 19:18:35 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/31 20:22:25 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/04/07 17:04:47 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,13 @@ int	main ( void ) {
 		std::cout << ">>> The vector is: ";
 		std::cout << span << std::endl;
 		try {
-			std::cout << std::endl << "Error exception on shortest span = " << span.shortestSpan() << std::endl;
+			std::cout << std::endl << "shortest span = " << span.shortestSpan() << std::endl;
 		} 
 		catch(std::exception & e) {
 			std::cout << e.what() << std::endl;
 		}
 		try {
-			std::cout << std::endl << "Error exception on longest span = " << span.longestSpan() << std::endl;
+			std::cout << std::endl << "longest span = " << span.longestSpan() << std::endl;
 		} 
 		catch(std::exception & e) {
 			std::cout << e.what() << std::endl;
@@ -56,13 +56,13 @@ int	main ( void ) {
 		std::cout << ">>> The vector is: ";
 		std::cout << span << std::endl;
 		try {
-			std::cout << std::endl << "Error exception on shortest span = " << span.shortestSpan() << std::endl;
+			std::cout << std::endl << "shortest span = " << span.shortestSpan() << std::endl;
 		} 
 		catch(std::exception & e) {
 			std::cout << e.what() << std::endl;
 		}
 		try {
-			std::cout << std::endl << "Error exception on longest span = " << span.longestSpan() << std::endl;
+			std::cout << std::endl << "longest span = " << span.longestSpan() << std::endl;
 		} 
 		catch(std::exception & e) {
 			std::cout << e.what() << std::endl;
@@ -76,13 +76,13 @@ int	main ( void ) {
 		std::cout << ">>> The vector is: ";
 		std::cout << span << std::endl;
 		try {
-			std::cout << std::endl << "Error exception on shortest span = " << span.shortestSpan() << std::endl;
+			std::cout << std::endl << "shortest span = " << span.shortestSpan() << std::endl;
 		} 
 		catch(std::exception & e) {
 			std::cout << e.what() << std::endl;
 		}
 		try {
-			std::cout << std::endl << "Error exception on longest span = " << span.longestSpan() << std::endl;
+			std::cout << std::endl << "longest span = " << span.longestSpan() << std::endl;
 		} 
 		catch(std::exception & e) {
 		std::cout << e.what() << std::endl;
@@ -96,13 +96,13 @@ int	main ( void ) {
 		std::cout << ">>> The vector is: ";
 		std::cout << span << std::endl;
 		try {
-			std::cout << std::endl << "Error exception on shortest span = " << span.shortestSpan() << std::endl;
+			std::cout << std::endl << "shortest span = " << span.shortestSpan() << std::endl;
 		}
 		catch(std::exception & e) {
 			std::cout << e.what() << std::endl;
 		}
 		try {
-			std::cout << std::endl << "Error exception on longest span = " << span.longestSpan() << std::endl;
+			std::cout << std::endl << "longest span = " << span.longestSpan() << std::endl;
 		} 
 		catch(std::exception & e) {
 			std::cout << e.what() << std::endl;
@@ -124,16 +124,16 @@ int	main ( void ) {
 			span.addNumber(10);
 		}
 		catch(std::exception & e) {
-			std::cout << e.what() << std::endl;
+			std::cout << "\nError: " << e.what() << std::endl;
 		}
 		try {
-			std::cout << std::endl << "Error exception on shortest span = " << span.shortestSpan() << std::endl;
+			std::cout << std::endl << "shortest span = " << span.shortestSpan() << std::endl;
 		}
 		catch(std::exception & e) {
 			std::cout << e.what() << std::endl;
 		}
 		try {
-			std::cout << std::endl << "Error exception on longest span = " << span.longestSpan() << std::endl;
+			std::cout << std::endl << "longest span = " << span.longestSpan() << std::endl;
 		}
 		catch(std::exception & e) {
 			std::cout << e.what() << std::endl;

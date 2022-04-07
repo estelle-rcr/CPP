@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 17:16:11 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/23 15:55:13 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/04/07 15:52:07 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main (int ac, char **av) {
 		Scalar	number( av[1] );
 		std::cout << number;
 	}
-	catch(const std::exception& e) {
+	catch (const std::exception& e) {
 		std::cout << e.what() << std::endl;;
 	}
 	return (EXIT_SUCCESS);
