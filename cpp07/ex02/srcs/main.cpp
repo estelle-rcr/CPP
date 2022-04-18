@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 15:53:17 by erecuero          #+#    #+#             */
-/*   Updated: 2022/04/07 16:50:52 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/04/19 00:33:23 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int main(void)
 		}
 	}
 
-	
+
 	{
 		std::cout << "\n>>> TEST ON USING COPY CONSTRUCTOR WITH INT ARRAY: <<<" << std::endl;
 		try {

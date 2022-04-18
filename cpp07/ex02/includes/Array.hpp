@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   array.hpp                                          :+:      :+:    :+:   */
+/*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 15:53:13 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/30 16:47:08 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/04/19 00:33:06 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ class Array {
 
 	public :
 		Array( void ) : _array(0), _size(0) {};
-		Array( unsigned int n ) : _array(new T[n]), _size(n) {
+		Array( unsigned int n ) : _size(n) {
+			_array = new T[n];
 			for (unsigned int i = 0; i < _size; i++)
 				this->_array[i] = 0;
 		};
@@ -59,6 +60,11 @@ class Array {
 		}
 
 		T	&operator[](std::size_t i)	{
+			if (i >= this->_size)
+				throw IndexException();
+			return (this->_array[i]);
+		}
+		T	operator[](std::size_t i) const	{
 			if (i >= this->_size)
 				throw IndexException();
 			return (this->_array[i]);
