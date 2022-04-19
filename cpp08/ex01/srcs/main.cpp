@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 19:18:35 by erecuero          #+#    #+#             */
-/*   Updated: 2022/04/07 17:04:47 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/04/15 16:43:41 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	main ( void ) {
 		span.addNumber(-1);
 		try {
 			span.addNumber(10);
-		} 
+		}
 		catch(std::exception & e) {
 			std::cout << e.what() << std::endl;
 		}
@@ -38,13 +38,13 @@ int	main ( void ) {
 		std::cout << span << std::endl;
 		try {
 			std::cout << std::endl << "shortest span = " << span.shortestSpan() << std::endl;
-		} 
+		}
 		catch(std::exception & e) {
 			std::cout << e.what() << std::endl;
 		}
 		try {
 			std::cout << std::endl << "longest span = " << span.longestSpan() << std::endl;
-		} 
+		}
 		catch(std::exception & e) {
 			std::cout << e.what() << std::endl;
 		}
@@ -57,13 +57,13 @@ int	main ( void ) {
 		std::cout << span << std::endl;
 		try {
 			std::cout << std::endl << "shortest span = " << span.shortestSpan() << std::endl;
-		} 
+		}
 		catch(std::exception & e) {
 			std::cout << e.what() << std::endl;
 		}
 		try {
 			std::cout << std::endl << "longest span = " << span.longestSpan() << std::endl;
-		} 
+		}
 		catch(std::exception & e) {
 			std::cout << e.what() << std::endl;
 		}
@@ -77,13 +77,13 @@ int	main ( void ) {
 		std::cout << span << std::endl;
 		try {
 			std::cout << std::endl << "shortest span = " << span.shortestSpan() << std::endl;
-		} 
+		}
 		catch(std::exception & e) {
 			std::cout << e.what() << std::endl;
 		}
 		try {
 			std::cout << std::endl << "longest span = " << span.longestSpan() << std::endl;
-		} 
+		}
 		catch(std::exception & e) {
 		std::cout << e.what() << std::endl;
 	}
@@ -103,7 +103,7 @@ int	main ( void ) {
 		}
 		try {
 			std::cout << std::endl << "longest span = " << span.longestSpan() << std::endl;
-		} 
+		}
 		catch(std::exception & e) {
 			std::cout << e.what() << std::endl;
 		}
@@ -114,7 +114,7 @@ int	main ( void ) {
 		std::vector<int> vector(10000, 1);
 		try {
 			span.fillSpan(vector.begin(), vector.end());
-		} 
+		}
 		catch(const std::exception& e) {
 			std::cerr << e.what() << std::endl;
 		}

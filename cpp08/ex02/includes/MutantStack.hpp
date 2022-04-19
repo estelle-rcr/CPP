@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 20:05:41 by erecuero          #+#    #+#             */
-/*   Updated: 2022/04/07 17:18:03 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/04/19 11:40:47 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,5 @@ class MutantStack : public std::stack<T>
 		reverse_iterator		rbegin() { return	this->c.rbegin(); }
 		reverse_iterator		rend()  { return	this->c.rend(); }
 };
-
-
 
 #endif
