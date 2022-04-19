@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 15:53:17 by erecuero          #+#    #+#             */
-/*   Updated: 2022/04/19 00:33:23 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/04/19 11:34:46 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,8 +121,9 @@ int main(void)
 		try {
 			int size = 8;
 			std::cout << ">> Create an int array of size 8 and select position 8 (should be wrong)" << std::endl;
-			Array<int> intArray2(size);
-			std::cout << intArray2[8] << std::endl;
+			const Array< int> intArray2(size);				// const object
+		//	intArray2[8] = 1;								// not assignable but readable and default initialization
+			std::cout <<  intArray2[8] << std::endl;		// readable
 			std::cout << std::endl;
 			std::cout << "\n---OK---" << std::endl;
 		}
