@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 15:42:01 by erecuero          #+#    #+#             */
-/*   Updated: 2022/03/31 20:21:38 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/04/19 14:56:29 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,6 @@ class Span {
 		public:
 			virtual const char *what() const throw() {
 				return ("Not enough data available to calculate span.");
-			}
-	};
-	class NumberTooHighException : public std::exception {
-
-		public:
-			virtual const char *what() const throw() {
-				return ("Can't add as many numbers into span.");
 			}
 	};
 

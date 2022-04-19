@@ -6,7 +6,7 @@
 /*   By: erecuero <erecuero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 20:05:48 by erecuero          #+#    #+#             */
-/*   Updated: 2022/04/07 17:12:33 by erecuero         ###   ########.fr       */
+/*   Updated: 2022/04/19 14:57:53 by erecuero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,13 +96,13 @@ int main(void) {
 		MutantStack<int>::iterator ite = mstack.end();
 		++it;
 		--it;
-		std::cout << "Start iterator:" << std::endl;
+		std::cout << "HERE iterator:" << std::endl;
 		while (it != ite)
 		{
 			std::cout << *it << std::endl;
 			++it;
 		}
-		std::cout << "Start reversed iterator:" << std::endl;
+		std::cout << "HERE reversed iterator:" << std::endl;
 		MutantStack<int>::reverse_iterator rit = mstack.rbegin();
 		MutantStack<int>::reverse_iterator rite = mstack.rend();
 		++rit;
